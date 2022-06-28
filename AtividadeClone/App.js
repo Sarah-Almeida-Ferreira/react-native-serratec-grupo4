@@ -1,8 +1,18 @@
-import Login from './src/screens/Login';
+
+import  Favorito  from './src/screens/Favorito';
 
 export default function App() {
   return (
-    <Login />
+    <>
+    <Favorito />
+    <StatusBar
+        animated={true}
+        backgroundColor="#61dafb"
+        barStyle={statusBarStyle}
+        showHideTransition={statusBarTransition}
+        hidden={true} />
+    </>
+    
   );
 }
 
