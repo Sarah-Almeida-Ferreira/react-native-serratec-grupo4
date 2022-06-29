@@ -18,7 +18,7 @@ export const Title = styled.Text`
   font-family: 'sans-serif';
 `;
 
-export const WrapperTextInfo =  styled.TouchableOpacity`
+export const WrapperTextInfo =  styled.TouchableWithoutFeedback`
     padding: 10px;
 `;
 
@@ -35,4 +35,3 @@ export const SpacingHeight = styled.View`
     width: 100%;
     height: ${(props) => props.height || 5 };
 `;
-

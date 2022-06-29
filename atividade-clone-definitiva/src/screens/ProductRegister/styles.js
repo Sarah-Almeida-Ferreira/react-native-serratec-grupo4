@@ -7,6 +7,7 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   margin: 0;
+  
 `;
 
 export const Title = styled.Text`
@@ -35,4 +36,3 @@ export const SpacingHeight = styled.View`
     width: 100%;
     height: ${(props) => props.height || 5 };
 `;
-

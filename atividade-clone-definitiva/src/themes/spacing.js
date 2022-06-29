@@ -3,4 +3,6 @@ export default {
   medium: '10px',
   large: '15px',
   extraLarge: '20px',
+  xxl: '40px',
+  xxxl: '80px',
 };

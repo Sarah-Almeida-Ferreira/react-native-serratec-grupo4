@@ -10,7 +10,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   color: ${colors.secondary};
   margin: 40px 0;
   font-weight: 800;
@@ -35,4 +35,3 @@ export const SpacingHeight = styled.View`
     width: 100%;
     height: ${(props) => props.height || 5 };
 `;
-

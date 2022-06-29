@@ -6,7 +6,8 @@ import spacing from '../../themes/spacing';
 import { LinearGradient } from 'expo-linear-gradient';
 import colors from '../../themes/colors';
 
-export const UserRegister = () => {
+
+export const CategoryRegister = () => {
   const navigation = useNavigation();
 
   return (
@@ -21,16 +22,10 @@ export const UserRegister = () => {
           width: '100%',
           position: 'absolute',
         }}
-      />   
-      <Input placeholder={'Nome'} />
+      />
+      <Input placeholder={'Nome da Categoria'} />
       <SpacingHeight height={spacing.extraLarge} />
-      <Input placeholder={'CPF'} />
-      <SpacingHeight height={spacing.extraLarge} />
-      <Input placeholder={'Data de Nascimento'} />
-      <SpacingHeight height={spacing.extraLarge} />
-      <Input placeholder={'Senha'} />
-      <SpacingHeight height={spacing.extraLarge} />
-      <Input placeholder={'Confirmar Senha'} />
+      <Input placeholder={'Imagem da categoria'} />
       <SpacingHeight height={spacing.extraLarge} />
 
 

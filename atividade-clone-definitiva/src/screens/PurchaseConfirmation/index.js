@@ -11,18 +11,11 @@ import spacing from '../../themes/spacing';
 import { LinearGradient } from 'expo-linear-gradient';
 
 
-export const Login = () => {
+export const PurchaseConfirmation = () => {
   const navigation = useNavigation();
 
   function openScreen() {
-    navigation.navigate('CategoryRegister');
-  }
-  function openScreen2() {
-    navigation.navigate('RecoverPassword');
-  }
-
-  function openScreen3(){
-    navigation.navigate('UserRegister')
+    navigation.navigate('UserRegister');
   }
 
 
@@ -40,30 +33,14 @@ export const Login = () => {
         }}
       />
       <Logo source={login} />
-      <Title> Login </Title>
-      <Input placeholder={'Digite seu login'} />
+      <SpacingHeight height={spacing.xxxl} />
+      <Title> Compra efetuada com sucesso! </Title>
       <SpacingHeight height={spacing.extraLarge} />
-      <Input placeholder={'Digite sua senha'} />
-      <WrapperTextInfo
-        onPress={openScreen2}
-      >
-        <TextInfo>
-          Esqueceu a sua senha? Clique aqui!
-        </TextInfo>
-      </WrapperTextInfo>
-      <SpacingHeight height={spacing.large} />
       <ButtonPrimary
         onPress={openScreen}
       >
-        <TextButton>ENTRAR</TextButton>
+        <TextButton>VOLTAR</TextButton>
       </ButtonPrimary>
-      <WrapperTextInfo
-      onPress={openScreen3}
-      >
-        <TextInfo>
-          Não possui cadastro? Cadastre-se!
-        </TextInfo>
-      </WrapperTextInfo>
     </Container>
   )
 }

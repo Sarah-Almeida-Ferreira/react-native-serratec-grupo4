@@ -10,7 +10,7 @@ export const Container = styled.View`
 `;
 
 export const Title = styled.Text`
-  font-size: 24px;
+  font-size: 18px;
   color: ${colors.secondary};
   margin: 40px 0;
   font-weight: 800;
@@ -18,15 +18,15 @@ export const Title = styled.Text`
   font-family: 'sans-serif';
 `;
 
-export const WrapperTextInfo =  styled.TouchableOpacity`
+export const WrapperTextInfo =  styled.TouchableWithoutFeedback`
     padding: 10px;
 `;
 
 export const TextInfo = styled.Text`
     color: ${colors.secondary};
     font-size: 12px;
-    font-weight: 700;
-    line-height: 12px;
+    font-weight: 800;
+    line-height: 18px;
     padding: 10px;
     font-family: 'sans-serif';
 `;
