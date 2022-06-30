@@ -7,7 +7,6 @@ export const Container = styled.View`
   align-items: center;
   justify-content: center;
   margin: 0;
-  
 `;
 
 export const Title = styled.Text`
@@ -19,7 +18,7 @@ export const Title = styled.Text`
   font-family: 'sans-serif';
 `;
 
-export const WrapperTextInfo =  styled.TouchableOpacity`
+export const WrapperTextInfo =  styled.TouchableWithoutFeedback`
     padding: 10px;
 `;
 
@@ -35,8 +34,4 @@ export const TextInfo = styled.Text`
 export const SpacingHeight = styled.View`
     width: 100%;
     height: ${(props) => props.height || 5 };
-`;
-
-export const TextInfoContainer = styled.View`
-  flex-direction: row;
 `;
