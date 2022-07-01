@@ -14,7 +14,6 @@ export const Login = () => {
 
   return (
     <MainContainer>
-
       <BeeIcon source={require('../../../assets/abelha.png')} />
       <FormContainer>
         <Title>Login</Title>
@@ -23,8 +22,6 @@ export const Login = () => {
         <EnterButton onPress={openScreen}>
           <ButtonText>ENTRAR</ButtonText>
         </EnterButton>
-
-
       </FormContainer>
     </MainContainer>
   );

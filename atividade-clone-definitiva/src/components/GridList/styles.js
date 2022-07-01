@@ -8,7 +8,8 @@ export const CardsContainer = styled.View`
 `;
 
 export const Card = styled.View`
-  
+  flex: 1;
+  justify-content: space-around;
 `;
 export const Table = styled.View`
   display: flex;

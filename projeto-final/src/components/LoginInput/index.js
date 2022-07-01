@@ -4,10 +4,10 @@ import colors from '../../themes/colors';
 
 export const LoginInput = ({ placeholder }) => {
   return (
-    <InputContainer
-      placeholderTextColor={`${colors.tertiary}`}
-      placeholder={placeholder}
-    />
+      <InputContainer
+        placeholderTextColor={`${colors.tertiary}`}
+        placeholder={placeholder}
+      />
   )
 } 
 

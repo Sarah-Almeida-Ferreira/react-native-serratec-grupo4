@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlatList } from 'react-native';
+import { FlatList, View } from 'react-native';
 import spacing from '../../themes/spacing';
-import { Card, SpacingHeight, TextInfo, Table } from './styles';
+import { Card, SpacingHeight, TextInfo, Table, HeaderText } from './styles';
 
 const ListaColumn = [
   {
@@ -53,12 +53,12 @@ const Item = ({ name, quantity, price, total }) => (
     <TextInfo>{price}</TextInfo>
     <TextInfo>{total}</TextInfo>
   </Table>
+
 );
 
 const Column = ({ column }) => (
-  <Table>
-    <TextInfo>{column}</TextInfo>
-  </Table>
+
+  <TextInfo>{column}</TextInfo>
 );
 
 export const GridList = () => {
@@ -80,22 +80,22 @@ export const GridList = () => {
 
   return (
     <Card>
-      <FlatList
-       data={ListaColumn} 
-       renderItem={renderizedColumn}
-       keyExtractor={(title) => title.id}
-       horizontal={false}
-     />
-      <FlatList
-        data={Lista}
-        renderItem={renderizedItem}
-        keyExtractor={(item) => item.id}
-        horizontal={false}
-      />
-      <SpacingHeight height={spacing.xxl} />
+      <Table>
+        <HeaderText>Produto</HeaderText>
+        <HeaderText>Quantidade</HeaderText>
+        <HeaderText>Preço unitário</HeaderText>
+        <HeaderText>Total</HeaderText>
+      </Table>
+        <FlatList
+          data={Lista}
+          keyExtractor={(item) => item.id}
+          renderItem={renderizedItem}
+          numColumns={1}
+          horizontal={false}
+        />
       <TextInfo>Total da compra</TextInfo>
-      <SpacingHeight height={spacing.extraLarge} />
       <TextInfo>Data da compra</TextInfo>
+
     </Card>
   )
 }

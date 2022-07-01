@@ -2,15 +2,14 @@ import styled from "styled-components/native";
 import colors from '../../themes/colors';
 
 export const MainButton = styled.TouchableOpacity`
-    padding: 5px;
-    box-sizing: border-box;
-    height: 33px;
-    width: 120px;
+    height: 57px;
+    width: 123px;
+
     background-color: ${colors.buttonColor};
-    border: 2px solid ${colors.tertiary};
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 5px;
-    margin: 20px;
+    
+    border: 3px solid ${colors.tertiary};
+    border-radius: 20px;
+
     justify-content: center;
 `;
 

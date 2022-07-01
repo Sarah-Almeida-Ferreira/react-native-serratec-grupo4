@@ -2,27 +2,38 @@ import styled from 'styled-components/native';
 import colors from '../../themes/colors';
 
 export const InputContainer = styled.TextInput`
-  height: 50px;
-  width: 170px;
+  height: 60px;
+  width: 200px;
+
   background-color: ${colors.primary};
-  border: 3px solid ${colors.tertiary};
+  
+  border: 5px solid ${colors.tertiary};
   border-radius: 30px;
+
   font-family: 'sans-serif';
-  padding-left: 10px;
-  margin: 10px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  padding-left: 32px;
+
+  margin: 30px;
 `;
 
 export const InputContainerPassword = styled.TextInput`
-  height: 40px;
-  width: 230px;
+  height: 60px;
+  width: 200px;
+
   background-color: ${colors.primary};
-  border: 2px solid ${colors.tertiary};
-  border-radius: 10px;
+  
+  border: 5px solid ${colors.tertiary};
+  border-radius: 30px;
+
   font-family: 'sans-serif';
-  padding-left: 10px;
-  margin: 10px;
+  font-weight: 800;
+  align-items: center;
+  justify-content: center;
+  padding-left: 32px;
+
   -webkit-text-security: disc;
   text-security: disc;
-
 `;
-

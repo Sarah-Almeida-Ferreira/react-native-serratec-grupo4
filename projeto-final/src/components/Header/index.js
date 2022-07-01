@@ -1,11 +1,14 @@
 import React from 'react';
-import { Container, Rectangle, Rectangle2, Title } from "./styles"
+import { Container, WrapperText, Title, Rectangle } from './styles';
 
 export const Header = () => {
     return (
         <Container>
             <Rectangle>
-                <Title>Olá, Usuário!</Title>
+                <WrapperText>
+                    <Title>Olá, usuário!</Title>
+                    <Title>Olá, usuário!</Title>
+                </WrapperText>
             </Rectangle>
         </Container>
     )
