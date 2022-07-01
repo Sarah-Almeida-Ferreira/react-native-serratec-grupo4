@@ -1,16 +1,14 @@
 import React from 'react';
 import { View } from 'react-native';
+import { InputContainer } from "./styles"
+
 
 // import { Container } from './styles';
 
-const EditInput = () => {
+export const EditInput = ({placeholder}) => {
   return (
-    <View>
-      <View>
-        
-      </View>
-    </View>
+    <InputContainer
+    placeholder={placeholder}
+    />
   );
 }
-
-export default EditInput;
