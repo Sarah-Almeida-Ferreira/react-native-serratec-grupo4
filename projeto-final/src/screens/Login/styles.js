@@ -3,9 +3,9 @@ import colors from '../../themes/colors';
 
 export const FormContainer = styled.View`
     background-color: ${colors.secondary};
-    height: 500px;
-    width: 300px;
-    border-radius: 10px;
+    height: 549px;
+    width: 330px;
+    border-radius: 50px;
     justify-content: center;
     align-items: center;
     margin-top: 20px;

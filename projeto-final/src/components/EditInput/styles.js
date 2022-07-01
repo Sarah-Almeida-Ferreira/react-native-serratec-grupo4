@@ -5,8 +5,9 @@ export const InputContainer = styled.TextInput`
   height: 31px;
   width: 188px;
   background-color: ${colors.secondary};
-  border: 2px solid ${colors.tertiary};
+  border: 5px solid ${colors.tertiary};
   border-radius: 5px;
-  padding-left: 5px;
+  align-items: center;
+  font-weight: 800;
   font-family: 'sans-serif';
 `;

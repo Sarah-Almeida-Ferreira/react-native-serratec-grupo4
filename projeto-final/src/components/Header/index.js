@@ -7,9 +7,6 @@ export const Header = () => {
             <Rectangle>
                 <Title>Olá, Usuário!</Title>
             </Rectangle>
-            <Rectangle2>
-
-            </Rectangle2>
         </Container>
     )
 }

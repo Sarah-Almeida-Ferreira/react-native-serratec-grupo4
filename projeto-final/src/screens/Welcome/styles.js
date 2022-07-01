@@ -21,3 +21,8 @@ export const Message = styled.Text`
     font-family: 'sans-serif';
     text-align: center;
 `;
+
+export const Logo = styled.Image`
+    width: 332px;
+    height: 194px;
+`;
