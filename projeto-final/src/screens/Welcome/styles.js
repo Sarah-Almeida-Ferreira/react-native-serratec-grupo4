@@ -6,7 +6,8 @@ export const LogoContainer = styled.View`
     background-color: ${colors.secondary};
     height: 265px;
     width: 100%;
-    border-radius: 10px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
     justify-content: center;
     align-items: center;
     position: absolute;
@@ -28,7 +29,3 @@ export const Logo = styled.Image`
     height: 194px;
 `;
 
-export const SpacingHeight = styled.View`
-    width: 100%;
-    height: ${spacing.xxl};
-`;

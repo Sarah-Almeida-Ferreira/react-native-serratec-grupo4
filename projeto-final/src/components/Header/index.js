@@ -1,15 +1,12 @@
 import React from 'react';
 import { Container, WrapperText, Title, Rectangle } from './styles';
 
-export const Header = () => {
+export const Header = ({ title }) => {
     return (
         <Container>
-            <Rectangle>
-                <WrapperText>
-                    <Title>Olá, usuário!</Title>
-                    <Title>Olá, usuário!</Title>
-                </WrapperText>
-            </Rectangle>
+            <WrapperText>
+                <Title>{title}</Title>
+            </WrapperText>
         </Container>
     )
 }

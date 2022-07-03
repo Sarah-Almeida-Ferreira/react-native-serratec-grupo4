@@ -2,15 +2,8 @@ import React from 'react';
 import { MainContainer } from '../../components/MainContainer/styles';
 import { FormContainer, Title, BeeIcon, EnterButton, ButtonText } from './styles';
 import { LoginInput, PasswordInput } from "../../components/LoginInput";
-import { useNavigation } from '@react-navigation/native';
 
-export const Login = () => {
-
-  const navigation = useNavigation();
-
-  function openScreen() {
-    navigation.navigate('Welcome');
-  }
+export const Login = ({ navigation }) => {
 
   return (
     <MainContainer>
@@ -19,7 +12,7 @@ export const Login = () => {
         <Title>Login</Title>
         <LoginInput placeholder={'Digite seu login'} />
         <PasswordInput placeholder={'Digite sua senha'} />
-        <EnterButton onPress={openScreen}>
+        <EnterButton onPress={() => navigation.navigate('Welcome')}>
           <ButtonText>ENTRAR</ButtonText>
         </EnterButton>
       </FormContainer>

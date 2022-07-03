@@ -5,7 +5,7 @@ import { MainContainer } from '../../components/MainContainer/styles';
 export const Home = () => {
     return (
         <MainContainer>
-            <Header />
+            <Header title='Olá, Admin' />
         </MainContainer>
     )
 }

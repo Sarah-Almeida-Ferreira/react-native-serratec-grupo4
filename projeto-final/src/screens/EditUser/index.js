@@ -5,17 +5,17 @@ import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 
-export const UserRegister = ({navigation}) => {
+export const EditUser = ({navigation}) => {
   return (
     <MainContainer>
-     <Header title='Cadastrar Usuário' />
+     <Header title='Editar Usuário' />
       <EditInput placeholder={'Nome'} />
       <EditInput placeholder={'CPF'} />
       <EditInput placeholder={'Data Nascimento'} />
       <EditInput placeholder={'Login'} />
       <EditInput placeholder={'Senha'} />
       <MainButton onPress={() => navigation.navigate('Users')}>
-        <ButtonText>Cadastrar</ButtonText>  
+        <ButtonText>Salvar</ButtonText>  
       </MainButton>
       <Footer />
     </MainContainer>
