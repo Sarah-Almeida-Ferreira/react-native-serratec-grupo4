@@ -4,17 +4,18 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
+import { ImgButton } from '../../components/ImgButton/index.js';
 
 export const EditProduct = ({navigation}) => {
   return (
     <MainContainer>
-     <Header title='Editar Produto' />
-      <EditInput placeholder={'Nome'} />
-      <EditInput placeholder={'CPF'} />
-      <EditInput placeholder={'Data Nascimento'} />
-      <EditInput placeholder={'Login'} />
-      <EditInput placeholder={'Senha'} />
-      <MainButton onPress={() => navigation.navigate('Products')}>
+      <Header title='Editar Produto' />
+      <ImgButton sourceImg={require('../../../assets/produto.png')} />
+      <EditInput nome='Nome:' placeholder='Nome do Produto' />
+      <EditInput nome='Descrição:' placeholder='Descrição do Produto' />
+      <EditInput nome='Quantidade em Estoque' placeholder='00' />
+      <EditInput nome='Valor:' placeholder='R$ 0,00' />
+      <MainButton style={{marginTop: 60}} onPress={() => navigation.navigate('Products')}>
         <ButtonText>Salvar</ButtonText>  
       </MainButton>
       <Footer />

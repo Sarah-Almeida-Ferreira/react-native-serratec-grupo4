@@ -11,12 +11,12 @@ export const Products = ({navigation}) => {
       <Header title='Produtos' />
       <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
       <WrapperProducts>
-        <ItemCell name='Sonic 2000' code='Cód.123456'/>
-        <ItemCell name='Conjunto Facas Ginzu' code='Cód.654321'/>
-        <ItemCell name='Meias Vivarina M' code='Cód.321654'/>
-        <ItemCell name='Rotoflex' code='Cód.654987'/>
-        <ItemCell name='Ambervision' code='Cód.789456'/>
-        <ItemCell name='Auri Shine' code='Cód.123789'/>
+        <ItemCell name='Sonic 2000' code='Cód.123456' onPressEdit={() => navigation.navigate('EditProduct')} />
+        <ItemCell name='Conjunto Facas Ginzu' code='Cód.654321' onPressEdit={() => navigation.navigate('EditProduct')} />
+        <ItemCell name='Meias Vivarina M' code='Cód.321654' onPressEdit={() => navigation.navigate('EditProduct')} />
+        <ItemCell name='Rotoflex' code='Cód.654987' onPressEdit={() => navigation.navigate('EditProduct')} />
+        <ItemCell name='Ambervision' code='Cód.789456' onPressEdit={() => navigation.navigate('EditProduct')} />
+        <ItemCell name='Auri Shine' code='Cód.123789' onPressEdit={() => navigation.navigate('EditProduct')} />
       </WrapperProducts>
     </MainContainer>
   )

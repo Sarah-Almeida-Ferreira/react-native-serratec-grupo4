@@ -7,6 +7,7 @@ export const CustomImage = styled.Image`
     border: 10px solid;
     border-radius: 100px;
     border-color: ${colors.imageColor};
+    resize-mode: center;
 `;
 
 export const Container = styled.View`
