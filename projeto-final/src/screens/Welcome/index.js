@@ -6,9 +6,13 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Footer } from '../../components/Footer';
 import spacing from '../../themes/spacing';
 
+let Timeout;
+
 export const Welcome = ({ navigation }) => {
 
+Timeout = setTimeout(() => navigation.navigate('Home'),3000);
   return (
+    
     <MainContainer>
       <LogoContainer>
         <Logo source={require('../../../assets/logoheader.png')} />
@@ -17,7 +21,7 @@ export const Welcome = ({ navigation }) => {
       <SpacingHeight height={spacing.extraLarge} />
       <MaterialCommunityIcons name="bike-fast" size={200} color="black" />
       <SpacingHeight height={spacing.extraLarge} />
-      <MainButton onPress={()=>navigation.navigate('Home')}>
+      <MainButton onPress={() => [clearTimeout(Timeout),navigation.navigate('Home')]}>
         <ButtonText>AVANÇAR</ButtonText>
       </MainButton>
     </MainContainer>
