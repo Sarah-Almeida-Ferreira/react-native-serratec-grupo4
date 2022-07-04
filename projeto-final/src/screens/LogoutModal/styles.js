@@ -1,14 +1,17 @@
 import styled from "styled-components/native";
 import colors from '../../themes/colors';
 
-export const FormContainer = styled.View`
-    background-color: ${colors.secondary};
-    height: 549px;
-    width: 330px;
-    border-radius: 50px;
+export const OuterView = styled.View`
+    flex:1;
     justify-content: center;
     align-items: center;
-    margin-top: 20px;
+    background-color: ${colors.secondary};
+`;
+
+export const ModalView = styled.View`
+    background-color: ${colors.primary};
+    padding: 35px;
+    border-radius: 50px;
 `;
 
 export const Content = styled.Text`
@@ -36,7 +39,7 @@ export const EnterButton = styled.TouchableOpacity`
     border-radius: 20px;
     box-sizing: border-box;
 
-    justify-content: center;
+justify-content: center;
 `;
 
 export const ButtonText = styled.Text`
