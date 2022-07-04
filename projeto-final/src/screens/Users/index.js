@@ -16,7 +16,7 @@ export const Users = ({navigation}) => {
         <ItemCell name='Patrick Monteiro' code='Cód.321654'/>
         <ItemCell name='Theo Bittencourt' code='Cód.654987'/>
         <ItemCell name='Sarah Almeida' code='Cód.789456'/>
-        <ItemCell name='Cheyenne Pereira' code='Cód.123789'/>
+        <ItemCell name='Xaimalai Pereira' code='Cód.123789'/>
       </WrapperUsers>
     </MainContainer>
   )
