@@ -28,7 +28,7 @@ export const EnterButton = styled.TouchableOpacity`
     height: 57px;
     width: 123px;
     padding: 5px;
-    margin: 20px;
+    margin-top: 50px;
 
     background-color: ${colors.buttonColor};
     

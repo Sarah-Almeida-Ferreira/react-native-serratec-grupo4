@@ -1,24 +1,23 @@
 import React from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
-import { EditInput } from '../../components/EditInput';
-import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
+import { ItemCell } from '../../components/ItemCell/index.js';
+import { WrapperUsers } from './styles.js';
+import { PlusButton } from '../../components/PlusButton/index.js';
 
 export const Users = ({navigation}) => {
   return (
     <MainContainer>
-     <Header title='Usuários Cadastrados' />
-      <MainButton onPress={() => navigation.navigate('UserRegister')}>
-        <ButtonText>Cadastrar Novo Usuário</ButtonText>  
-      </MainButton>
-      <EditInput placeholder={'Usuário da Silva'} />
-      <MainButton onPress={() => navigation.navigate('EditUser')}>
-        <ButtonText>Editar Usuário</ButtonText>  
-      </MainButton>
-      <EditInput placeholder={'Usuário da Silva'} />
-      <EditInput placeholder={'Usuário da Silva'} />
-      <EditInput placeholder={'Usuário da Silva'} />
-      <EditInput placeholder={'Usuário da Silva'} />
+      <Header title='Usuários Cadastrados' />
+      <PlusButton />
+      <WrapperUsers>
+        <ItemCell name='Wanderson Chevrand' code='Cód.123456'/>
+        <ItemCell name='André Lucas' code='Cód.654321'/>
+        <ItemCell name='Patrick Monteiro' code='Cód.321654'/>
+        <ItemCell name='Theo Bittencourt' code='Cód.654987'/>
+        <ItemCell name='Sarah Almeida' code='Cód.789456'/>
+        <ItemCell name='Cheyenne Pereira' code='Cód.123789'/>
+      </WrapperUsers>
     </MainContainer>
   )
 }
