@@ -8,7 +8,7 @@ import { PlusButton } from '../../components/PlusButton/index.js';
 export const Products = ({navigation}) => {
   return (
     <MainContainer>
-      <Header title='Produtos Cadastrados' />
+      <Header title='Produtos' />
       <PlusButton />
       <WrapperProducts>
         <ItemCell name='Sonic 2000' code='Cód.123456'/>

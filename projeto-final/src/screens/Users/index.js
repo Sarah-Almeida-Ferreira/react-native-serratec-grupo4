@@ -8,7 +8,7 @@ import { PlusButton } from '../../components/PlusButton/index.js';
 export const Users = ({navigation}) => {
   return (
     <MainContainer>
-      <Header title='Usuários Cadastrados' />
+      <Header title='Usuários' />
       <PlusButton />
       <WrapperUsers>
         <ItemCell name='Wanderson Chevrand' code='Cód.123456'/>
