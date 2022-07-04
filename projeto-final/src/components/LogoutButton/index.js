@@ -8,11 +8,7 @@ export const LogoutButton = ({ navigation }) => {
     <CustomLogoutButton
       onPress={() => {navigation.navigate('Logout')}}
     >
-      <MaterialCommunityIcons
-        name="logout-variant"
-        color={colors.primary}
-        size={24}
-      />
+      
     </CustomLogoutButton>
   )
 }

@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { MainContainer, SpacingHeight } from '../../components/MainContainer/styles';
-import { LogoContainer, Message, Logo} from './styles'
-import { MainButton, ButtonText } from '../../components/MainButton/styles';
+import { LogoContainer, Message, Logo } from './styles'
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Footer } from '../../components/Footer';
 import spacing from '../../themes/spacing';
 
-let Timeout;
-
 export const Welcome = ({ navigation }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Home')
+    }, 3000)
+  }, [])
 
-Timeout = setTimeout(() => navigation.navigate('Home'),3000);
   return (
-    
+
     <MainContainer>
       <LogoContainer>
         <Logo source={require('../../../assets/logoheader.png')} />
@@ -20,10 +21,7 @@ Timeout = setTimeout(() => navigation.navigate('Home'),3000);
       <Message>Modo bicicleta sem rodinhas ativado!</Message>
       <SpacingHeight height={spacing.extraLarge} />
       <MaterialCommunityIcons name="bike-fast" size={200} color="black" />
-      <SpacingHeight height={spacing.extraLarge} />
-      <MainButton onPress={() => [clearTimeout(Timeout),navigation.navigate('Home')]}>
-        <ButtonText>AVANÇAR</ButtonText>
-      </MainButton>
+      <Footer />
     </MainContainer>
   );
 }
