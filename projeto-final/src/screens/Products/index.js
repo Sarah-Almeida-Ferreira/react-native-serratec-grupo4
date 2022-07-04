@@ -9,7 +9,7 @@ export const Products = ({navigation}) => {
   return (
     <MainContainer>
       <Header title='Produtos' />
-      <PlusButton />
+      <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
       <WrapperProducts>
         <ItemCell name='Sonic 2000' code='Cód.123456'/>
         <ItemCell name='Conjunto Facas Ginzu' code='Cód.654321'/>

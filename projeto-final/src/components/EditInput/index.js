@@ -1,14 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
-import { InputContainer } from "./styles"
-
+import { Container, CustomInput, NomeInput, WrapperInput } from "./styles"
+import { MaterialIcons } from '@expo/vector-icons';
+import colors from '../../themes/colors';
 
 // import { Container } from './styles';
 
-export const EditInput = ({placeholder}) => {
+export const EditInput = ({nome, placeholder}) => {
   return (
-    <InputContainer
-    placeholder={placeholder}
-    />
+    <Container>
+      <NomeInput>{nome}</NomeInput>
+      <WrapperInput>
+        <CustomInput placeholder={placeholder} />
+        <MaterialIcons name="edit" size={24} color={colors.secondary} style={{marginLeft: -20}}/>
+      </WrapperInput>
+    </Container>
   );
 }
