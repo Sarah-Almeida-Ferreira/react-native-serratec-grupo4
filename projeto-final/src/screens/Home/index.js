@@ -9,32 +9,44 @@ const Lista = [
     {
         id: 1,
         image: require('../../../assets/bruxinha200.png'),
-        name: "Sarah Almeida"
+        name: "Sarah Almeida",
+        github: 'https://github.com/Sarah-Almeida-Ferreira',
+        linkedin: 'https://www.linkedin.com/in/sarah-almeida-9161b9215'
     },
     {
         id: 2,
         image: require('../../../assets/lobiboy200.png'),
-        name: "André Lucas"
+        name: "André Lucas",
+        github: 'https://github.com/Andre-Lucas-093/',
+        linkedin: 'https://github.com/Andre-Lucas-093/'
     },
     {
         id: 3,
         image: require('../../../assets/vampirinho200.png'),
-        name: "Patrick Monteiro"
+        name: "Patrick Monteiro",
+        github: 'https://github.com/Patrick-Jabba',
+        linkedin: 'https://www.linkedin.com/in/patrick-monteiro-fischer-1316369b/'
     },
     {
         id: 4,
         image: require('../../../assets/frank200.png'),
-        name: "Wanderson Chevrand"
+        name: "Wanderson Chevrand",
+        github: 'https://github.com/Chevrand',
+        linkedin: 'https://www.linkedin.com/in/wanderson-chevrand-da-costa-a878451a5'
     },
     {
         id: 5,
         image: require('../../../assets/muminha200.png'),
-        name: "Theo Bittencourt"
+        name: "Theo Bittencourt",
+        github: 'https://github.com/theobitt',
+        linkedin: 'https://www.linkedin.com/in/theobittencourt/'
     },
     {
         id: 6,
         image: require('../../../assets/pereira200.png'),
-        name: "Cheyenne Pereira"
+        name: "Cheyenne Pereira",
+        github: 'https://github.com/cgpereira',
+        linkedin: 'https://github.com/cgpereira'
     },
   ];
 
@@ -44,6 +56,8 @@ export const Home = () => {
         <DevCard
           image={item.image}
           name={item.name}
+          github={item.github}
+          linkedin={item.linkedin}
         />
     );
 
