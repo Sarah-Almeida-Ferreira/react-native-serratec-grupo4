@@ -20,6 +20,8 @@ import { EditProduct } from '../screens/EditProduct';
 import { Categories } from '../screens/Categories';
 import { CategoryRegister } from '../screens/CategoryRegister';
 import { EditCategory } from '../screens/EditCategory';
+import { LogoutModal } from '../screens/LogoutModal';
+
 
 // Icons
 import { Ionicons, Feather, MaterialCommunityIcons } from '@expo/vector-icons';
@@ -99,12 +101,16 @@ function TabRoutes() {
         }}
       />
       <Tab.Screen
-        name='Logout'
-        component={Logout}
+        name='LogoutModal'
+        component={LogoutModal}
         options={{
           tabBarLabel: '',
           tabBarIcon: () => (
-            <LogoutButton />
+            <MaterialCommunityIcons
+              name="logout-variant"
+              color={colors.primary}
+              size={24}
+            />
           )
         }}
       />
@@ -168,8 +174,12 @@ export function StackRoutes() {
         component={EditCategory}
       />
       <Stack.Screen
+        name='LogoutModal'
+        component={LogoutModal}
+      />
+      <Stack.Screen
         name='Logout'
-        component={TabRoutes}
+        component={Logout}
       />
     </Stack.Navigator>
   )

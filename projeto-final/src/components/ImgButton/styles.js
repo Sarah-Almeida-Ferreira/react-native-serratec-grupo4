@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from "styled-components/native";
 import colors from "../../themes/colors";
 
 export const CustomImage = styled.Image`
