@@ -9,6 +9,8 @@ export const Container = styled.View`
     background-color: ${colors.secondary};
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
+    flex-direction: row;
+    justify-content: flex-start;
 `;
 
 export const WrapperText = styled.View`
@@ -22,4 +24,12 @@ export const Title = styled.Text`
     font-style: normal;
     font-weight: 700;
     font-size: 24px;
+`;
+
+export const Logo = styled.Image`
+    width: 100px;
+    height: 50px;
+    left: 5px;
+    top: 12px;
+    margin-right: 10px;
 `;
