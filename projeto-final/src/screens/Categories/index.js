@@ -11,9 +11,9 @@ export const Categories = ({navigation}) => {
       <Header title='Categorias' />
       <PlusButton />
       <WrapperCategories>
-        <ItemCell name='Eletrônicos' code='Cód.123'/>
-        <ItemCell name='Bugingangas' code='Cód.456'/>
-        <ItemCell name='Alimentos' code='Cód.789'/>
+        <ItemCell name='Eletrônicos' code='Cód.123' onPressEdit={() => navigation.navigate('EditCategory')} />
+        <ItemCell name='Bugingangas' code='Cód.456' onPressEdit={() => navigation.navigate('EditCategory')} />
+        <ItemCell name='Alimentos' code='Cód.789' onPressEdit={() => navigation.navigate('EditCategory')} />
       </WrapperCategories>
     </MainContainer>
   )

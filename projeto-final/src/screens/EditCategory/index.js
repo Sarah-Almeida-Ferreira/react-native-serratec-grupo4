@@ -4,18 +4,16 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
+import { ImgButton } from '../../components/ImgButton/index.js';
 
-export const EditCategory = ({ navigation }) => {
+export const EditCategory = ({navigation}) => {
   return (
     <MainContainer>
       <Header title='Editar Categoria' />
-      <EditInput placeholder={'Nome'} />
-      <EditInput placeholder={'CPF'} />
-      <MainButton
-        onPress={() => {
-          navigation.navigate('Categories')
-        }}>
-        <ButtonText>Salvar</ButtonText>
+      <ImgButton sourceImg={require('../../../assets/produto.png')} />
+      <EditInput nome='Nome:' placeholder='Nome da Categoria' />
+      <MainButton style={{marginTop: 60}} onPress={() => navigation.navigate('Categories')}>
+        <ButtonText>Salvar</ButtonText>  
       </MainButton>
       <Footer />
     </MainContainer>
