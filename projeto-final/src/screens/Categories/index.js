@@ -32,7 +32,7 @@ export const Categories = ({ navigation }) => {
   return (
     <MainContainer>
       <Header title='Categorias' />
-      <PlusButton />
+      <PlusButton onPress={() => navigation.navigate('CategoryRegister')} />
       <WrapperCategories>
         <FlatList
           data={category}

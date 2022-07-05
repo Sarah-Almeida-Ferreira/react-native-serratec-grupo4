@@ -1,22 +1,43 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { ItemCell } from '../../components/ItemCell/index.js';
 import { WrapperProducts } from './styles.js';
 import { PlusButton } from '../../components/PlusButton/index.js';
+import { api } from '../../services/api.js';
+import { FlatList } from 'react-native';
 
 export const Products = ({navigation}) => {
+  const [product, setProduct] = useState({});
+
+  const getProducts = async () => {
+    const { data } = await api.get('/produto', {
+      auth: {
+        username: 'reactnative',
+        password: '2022'
+      }
+    });
+    setProduct(data);
+  }
+
+  const renderItem = ({item}) => (
+    <ItemCell name={item.nome} code={item.id} onPressEdit={() => navigation.navigate('EditCategory')} />
+  );
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
   return (
     <MainContainer>
       <Header title='Produtos' />
       <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
       <WrapperProducts>
-        <ItemCell name='Sonic 2000' code='Cód.123456' onPressEdit={() => navigation.navigate('EditProduct')} />
-        <ItemCell name='Conjunto Facas Ginzu' code='Cód.654321' onPressEdit={() => navigation.navigate('EditProduct')} />
-        <ItemCell name='Meias Vivarina M' code='Cód.321654' onPressEdit={() => navigation.navigate('EditProduct')} />
-        <ItemCell name='Rotoflex' code='Cód.654987' onPressEdit={() => navigation.navigate('EditProduct')} />
-        <ItemCell name='Ambervision' code='Cód.789456' onPressEdit={() => navigation.navigate('EditProduct')} />
-        <ItemCell name='Auri Shine' code='Cód.123789' onPressEdit={() => navigation.navigate('EditProduct')} />
+        <FlatList
+          data={product}
+          keyExtractor={item => item.id}
+          renderItem={renderItem}
+        />
       </WrapperProducts>
     </MainContainer>
   )
