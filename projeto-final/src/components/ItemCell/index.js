@@ -7,7 +7,7 @@ export const ItemCell = ({name, code, onPressEdit, onPressDelete}) => {
         <Container>
             <WrapperUser>
                 <Name>{name}</Name>
-                <Code>{code}</Code>
+                <Code>Cód: {code}</Code>
             </WrapperUser>
             <CustomButton onPress={onPressEdit}>
                 <MaterialIcons name="edit" size={24} color={colors.secondary} />
