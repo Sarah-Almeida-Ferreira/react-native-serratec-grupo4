@@ -4,20 +4,25 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
+import { SpacingHeight  } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
-import {SpacingHeight} from './styles.js';
 import { MaterialIcons } from '@expo/vector-icons';
 
 
+const IconCam = () => {
+  return (
+    <View>
+      <MaterialIcons name="camera-enhance" size={40} color="#1e1e23" />          
+    </View>
+    )
+}
 
 export const UserRegister = ({navigation}) => {
   return (
     <MainContainer>
      <Header title='Cadastrar Usuário' />
      <SpacingHeight></SpacingHeight>
-     <ImgButton>
-     <MaterialIcons name="camera-enhance" size={40} color="#1e1e23" />
-     </ImgButton>
+      <ImgButton source={IconCam}></ImgButton>
       <EditInput placeholder={'Nome'} />
       <SpacingHeight></SpacingHeight>
       <EditInput placeholder={'CPF'} />

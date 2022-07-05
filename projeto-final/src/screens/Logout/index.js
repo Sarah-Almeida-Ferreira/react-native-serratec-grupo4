@@ -13,9 +13,9 @@ export const Logout = ({ navigation }) => {
     <MainContainer>
       <BeeIcon source={require('../../../assets/abelha.png')} />
       <FormContainer>
-        <Content>You have been logged Out!</Content>
+        <Content>Você foi deslogado!</Content>
         <SpacingHeight height={spacing.extraLarge} />
-        <Content>Thank you!</Content>
+        <Content>Obrigado e volte sempre!</Content>
       </FormContainer>
     </MainContainer>
   );
