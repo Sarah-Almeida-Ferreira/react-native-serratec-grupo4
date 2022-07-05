@@ -8,6 +8,5 @@ export default function App() {
     <NavigationContainer>
       <StackRoutes />
     </NavigationContainer>
-    
   );
 }

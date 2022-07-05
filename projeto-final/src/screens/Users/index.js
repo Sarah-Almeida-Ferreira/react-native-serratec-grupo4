@@ -11,12 +11,7 @@ export const Users = ({navigation}) => {
   const [user, setUser] = useState({});
 
   const getUsers = async () => {
-    const { data } = await api.get('/usuario', {
-      auth: {
-        username: 'reactnative',
-        password: '2022'
-      }
-    });
+    const { data } = await api.get('/usuario');
     setUser(data);
   }
 

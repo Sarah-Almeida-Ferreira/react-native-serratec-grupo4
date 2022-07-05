@@ -5,7 +5,6 @@ import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
-import spacing from '../../themes/spacing';
 import {SpacingHeight} from './styles.js';
 import { MaterialIcons } from '@expo/vector-icons';
 

@@ -11,12 +11,7 @@ export const Categories = ({ navigation }) => {
   const [category, setCategory] = useState({});
 
   const getCategories = async () => {
-    const { data } = await api.get('/categoria', {
-      auth: {
-        username: 'reactnative',
-        password: '2022'
-      }
-    });
+    const { data } = await api.get('/categoria');
     setCategory(data);
     console.log(data);
   }

@@ -11,12 +11,7 @@ export const Products = ({navigation}) => {
   const [product, setProduct] = useState({});
 
   const getProducts = async () => {
-    const { data } = await api.get('/produto', {
-      auth: {
-        username: 'reactnative',
-        password: '2022'
-      }
-    });
+    const { data } = await api.get('/produto');
     setProduct(data);
   }
 
