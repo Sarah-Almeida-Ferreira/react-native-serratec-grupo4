@@ -8,7 +8,7 @@ import { api } from '../../services/api.js';
 import { FlatList } from 'react-native';
 
 export const Users = ({navigation}) => {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState([]);
 
   const getUsers = async () => {
     const { data } = await api.get('/usuario');

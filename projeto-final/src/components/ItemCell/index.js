@@ -1,13 +1,14 @@
-import { Container, CustomButton, Code, Name, WrapperUser } from "./styles"
+import { Container, CustomButton, Code, Name, WrapperUser, Foto } from "./styles"
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import colors from "../../themes/colors";
 
-export const ItemCell = ({name, code, onPressEdit, onPressDelete}) => {
+export const ItemCell = ({ nome, code, foto, onPressEdit, onPressDelete }) => {
     return (
         <Container>
             <WrapperUser>
-                <Name>{name}</Name>
+                <Name>{nome}</Name>
                 <Code>Cód: {code}</Code>
+                <Foto source={{uri: foto} } />
             </WrapperUser>
             <CustomButton onPress={onPressEdit}>
                 <MaterialIcons name="edit" size={24} color={colors.secondary} />

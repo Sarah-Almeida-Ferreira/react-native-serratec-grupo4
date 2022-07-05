@@ -26,6 +26,12 @@ export const Name = styled.Text`
     font-size: 18px;
 `;
 
+export const Foto = styled.Image`
+    width: 100px;
+    height: 150px;
+    border-radius: 4px;
+`;
+
 export const Code = styled.Text`
     color: ${colors.primary};
     font-family: 'Roboto';

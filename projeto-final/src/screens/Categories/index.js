@@ -8,12 +8,11 @@ import { api } from '../../services/api.js';
 import { FlatList } from 'react-native';
 
 export const Categories = ({ navigation }) => {
-  const [category, setCategory] = useState({});
+  const [category, setCategory] = useState([]);
 
   const getCategories = async () => {
     const { data } = await api.get('/categoria');
     setCategory(data);
-    console.log(data);
   }
 
   const renderItem = ({item}) => (
