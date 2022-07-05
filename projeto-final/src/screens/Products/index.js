@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
-import { ItemCell } from '../../components/ItemCell/index.js';
+import { ItemCellProduct } from '../../components/ItemCellProduct/index.js';
 import { WrapperProducts } from './styles.js';
 import { PlusButton } from '../../components/PlusButton/index.js';
 import { api } from '../../services/api.js';
@@ -16,7 +16,7 @@ export const Products = ({ navigation }) => {
   }
 
   const renderItem = ({ item }) => (
-    <ItemCell 
+    <ItemCellProduct
     nome={item.nome} 
 
     foto={item.foto} 
