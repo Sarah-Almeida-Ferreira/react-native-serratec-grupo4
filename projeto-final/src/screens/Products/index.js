@@ -32,8 +32,8 @@ export const Products = ({ navigation }) => {
   return (
     <MainContainer>
       <Header title='Produtos' />
-      <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
       <WrapperProducts>
+        <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
         <FlatList
           data={product}
           keyExtractor={(item) => item.id}

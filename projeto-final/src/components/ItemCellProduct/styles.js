@@ -1,44 +1,53 @@
 import styled from "styled-components/native";
 import colors from "../../themes/colors";
 
-export const Container = styled.View`
+export const ButtonsContainer = styled.View`
     flex-direction: row;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 `;
 
 export const Card = styled.View`
-   display: flex;
    flex-direction: row;
-
    background-color: ${colors.secondary};
-   width: 300px;
-   height: 200px;
+   width: 330px;
+   height: 160px;
    border-radius: 20px;
-   padding: 0px 16px;
    border: 3px solid ${colors.tertiary};
-   
-   & + & {
-    margin-top: 16px;
-  }
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 20px;
 `;
 
 export const TextContainer = styled.View`
+    width: 170px;
+    margin-left: 15px;
+    position: absolute;
+    top: 20px;
+    left: 120px;
 `;
 
 export const Name = styled.Text`
-    justify-content: center;
-    align-self: center;
     color: ${colors.primary};
-    font-family: Roboto;
-    font-weight: 700;
-    font-size: 18px;
+    font-family: 'sans-serif';
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 10px;
+`;
+
+export const Description = styled.Text`
+    color: ${colors.primary};
+    font-family: 'sans-serif';
+    font-weight: normal;
+    font-size: 12px;
 `;
 
 export const Foto = styled.Image`
-    justify-content: center;
-    align-self: center;
     width: 100px;
-    height: 150px;
+    height: 120px;
     border-radius: 20px;
+    margin-left: 15px;
     border: 3px solid ${colors.primary}
 `;
 
