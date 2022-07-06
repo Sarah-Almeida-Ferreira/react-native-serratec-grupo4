@@ -16,7 +16,7 @@ export const Users = ({navigation}) => {
   }
 
   const renderItem = ({item}) => (
-    <ItemCell name={item.nome} code={item.id} onPressEdit={() => navigation.navigate('EditCategory')} />
+    <ItemCell name={item.nome} code={item.id} onPressEdit={() => navigation.navigate('EditUser')} />
   );
 
   useEffect(() => {

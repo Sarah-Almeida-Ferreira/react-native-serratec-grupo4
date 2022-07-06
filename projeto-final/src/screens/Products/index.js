@@ -20,7 +20,9 @@ export const Products = ({ navigation }) => {
     foto={item.foto}
     nome={item.nome} 
     descricao={item.descricao}
-    onPressEdit={() => navigation.navigate('EditProducts')} />
+    onPressEdit={() => navigation.navigate('EditProduct')} />
+
+
   );
 
   useEffect(() => {
