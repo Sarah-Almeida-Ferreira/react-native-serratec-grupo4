@@ -17,10 +17,10 @@ export const Products = ({ navigation }) => {
 
   const renderItem = ({ item }) => (
     <ItemCellProduct
+    foto={item.foto}
     nome={item.nome} 
-
-    foto={item.foto} 
-    onPressEdit={() => navigation.navigate('EditCategory')} />
+    descricao={item.descricao}
+    onPressEdit={() => navigation.navigate('EditProducts')} />
   );
 
   useEffect(() => {

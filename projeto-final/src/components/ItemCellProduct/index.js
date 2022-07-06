@@ -1,20 +1,34 @@
-import { Container, CustomButton, Code, Name, WrapperUser, Foto } from "./styles"
+import { Container, CustomButton, Name, Foto, Card, TextContainer } from "./styles"
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import colors from "../../themes/colors";
 
-export const ItemCellProduct = ({ nome, code, foto, onPressEdit, onPressDelete }) => {
+export const ItemCellProduct = ({ nome, descricao, foto, onPressEdit, onPressDelete }) => {
     return (
         <Container>
-            <WrapperUser>
-                <Name>{nome}</Name>
-                <Code>Cód: {code}</Code>
-                <Foto source={{uri: foto} } />
-            </WrapperUser>
+            <Card>
+                <Foto source={{ uri: foto }} />
+                <TextContainer>
+                    <Name>{nome}</Name>
+                </TextContainer>
+                <TextContainer>
+                    <Name>Descrição: {descricao}</Name>
+                </TextContainer>
+            </Card>
+
             <CustomButton onPress={onPressEdit}>
-                <MaterialIcons name="edit" size={24} color={colors.secondary} />
+                <MaterialIcons
+                    name="edit"
+                    size={24}
+                    color={colors.secondary} />
             </CustomButton>
-            <CustomButton onPress={onPressDelete}>
-                <FontAwesome5 name="trash" size={24} color={colors.secondary} />
+            <CustomButton
+                onPress={onPressDelete}
+            >
+                <FontAwesome5
+                    name="trash"
+                    size={24}
+                    color={colors.secondary}
+                />
             </CustomButton>
         </Container>
     )
