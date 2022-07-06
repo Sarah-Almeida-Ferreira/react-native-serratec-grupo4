@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { ItemCell } from '../../components/ItemCell/index.js';
-import { WrapperUsers } from './styles.js';
 import { PlusButton } from '../../components/PlusButton/index.js';
 import { api } from '../../services/api.js';
 import { FlatList } from 'react-native';
@@ -27,13 +26,11 @@ export const Users = ({navigation}) => {
     <MainContainer>
       <Header title='Usuários' />
       <PlusButton onPress={() => navigation.navigate('UserRegister')} />
-      <WrapperUsers>
-        <FlatList
-          data={user}
-          keyExtractor={item => item.id}
-          renderItem={renderItem}
-        />
-      </WrapperUsers>
+      <FlatList
+        data={user}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
+      />
     </MainContainer>
   )
 }

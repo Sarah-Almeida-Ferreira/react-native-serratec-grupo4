@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { ItemCellProduct } from '../../components/ItemCellProduct/index.js';
-import { WrapperProducts } from './styles.js';
 import { PlusButton } from '../../components/PlusButton/index.js';
 import { api } from '../../services/api.js';
 import { FlatList } from 'react-native';
@@ -32,14 +31,12 @@ export const Products = ({ navigation }) => {
   return (
     <MainContainer>
       <Header title='Produtos' />
-      <WrapperProducts>
-        <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
-        <FlatList
-          data={product}
-          keyExtractor={(item) => item.id}
-          renderItem={renderItem}
-        />
-      </WrapperProducts>
+      <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
+      <FlatList
+        data={product}
+        keyExtractor={(item) => item.id}
+        renderItem={renderItem}
+      />
     </MainContainer>
   )
 }
