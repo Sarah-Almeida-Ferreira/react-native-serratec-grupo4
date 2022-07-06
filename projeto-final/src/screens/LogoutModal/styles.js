@@ -63,3 +63,9 @@ export const OtherButton = styled.Pressable`
 
     justify-content: center;
 `;
+
+export const Container = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;

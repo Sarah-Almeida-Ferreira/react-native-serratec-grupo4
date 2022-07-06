@@ -22,9 +22,13 @@ export const Users = ({navigation}) => {
     getUsers();
   }, []);
 
+  function goBack() {
+    navigation.goBack();
+  }
+  
   return (
     <MainContainer>
-      <Header title='Usuários' />
+      <Header title='Usuários' goBack={goBack} iconName='arrow-back'/>
       <PlusButton onPress={() => navigation.navigate('UserRegister')} />
       <FlatList
         data={user}

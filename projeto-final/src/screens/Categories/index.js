@@ -22,9 +22,13 @@ export const Categories = ({ navigation }) => {
     getCategories();
   }, []);
 
+  function goBack() {
+    navigation.goBack();
+  }
+
   return (
     <MainContainer>
-      <Header title='Categorias' />
+      <Header title='Categorias' goBack={goBack} iconName='arrow-back'/>
       <PlusButton onPress={() => navigation.navigate('CategoryRegister')} />
         <FlatList
           data={category}

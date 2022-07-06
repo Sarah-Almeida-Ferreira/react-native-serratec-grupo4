@@ -28,9 +28,13 @@ export const Products = ({ navigation }) => {
     getProducts();
   }, []);
 
+  function goBack() {
+    navigation.goBack();
+  }
+  
   return (
     <MainContainer>
-      <Header title='Produtos' />
+      <Header title='Produtos' goBack={goBack} iconName='arrow-back'/>
       <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
       <FlatList
         data={product}
