@@ -12,11 +12,12 @@ export const EditInput = ({nome, placeholder, value, onChangeText, autoCapitaliz
       <WrapperInput>
         <CustomInput
           placeholder={placeholder}
+          placeholderTextColor={colors.secondary}
           value={value}
           onChangeText={onChangeText}
           autoCapitalize={autoCapitalize}
         />
-        <MaterialIcons name="edit" size={24} color={colors.secondary} style={{marginLeft: 10}}/>
+        {/* <MaterialIcons name="edit" size={24} color={colors.secondary} style={{marginLeft: 10}}/> */}
       </WrapperInput>
     </Container>
   );

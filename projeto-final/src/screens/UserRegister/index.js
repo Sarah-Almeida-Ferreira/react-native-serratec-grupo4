@@ -1,41 +1,85 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
-import { SpacingHeight  } from './styles.js';
+import { SpacingHeight, WrapperRegister } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
-import { MaterialIcons } from '@expo/vector-icons';
 
+export const UserRegister = ({ navigation }) => {
+  const [name, setName] = useState("");
+  const [cpf, setCpf] = useState("");
+  const [birthday, setBirthday] = useState("");
+  const [login, setLogin] = useState("");
+  const [password, setPassword] = useState("");
+  const [photo, setPhoto] = useState("https://i.imgur.com/khLyPgQ.png");
 
-const IconCam = () => {
-  return (
-    <View>
-      <MaterialIcons name="camera-enhance" size={40} color="#1e1e23" />          
-    </View>
-    )
-}
+  const addPost = () => {
+    const data = {
+      ativo: true,
+      nome: name,
+      cpf: cpf,
+      dtNascimento: birthday,
+      login: login,
+      senha: password,
+      foto: photo,
+    };
 
-export const UserRegister = ({navigation}) => {
+    api.post('/usuario', data)
+      .then((response) => renderOutput(response));
+
+    navigation.goBack();
+  };
+
   return (
     <MainContainer>
-     <Header title='Cadastrar Usuário' />
-     <SpacingHeight></SpacingHeight>
-      <ImgButton source={IconCam}></ImgButton>
-      <EditInput placeholder={'Nome'} />
-      <SpacingHeight></SpacingHeight>
-      <EditInput placeholder={'CPF'} />
-      <SpacingHeight></SpacingHeight>
-      <EditInput placeholder={'Data Nascimento'} />
-      <SpacingHeight></SpacingHeight>
-      <EditInput placeholder={'Login'} />
-      <SpacingHeight></SpacingHeight>
-      <EditInput placeholder={'Senha'} />
-      <SpacingHeight></SpacingHeight>
-      <MainButton onPress={() => navigation.navigate('Users')}>
-        <ButtonText>Cadastrar</ButtonText>  
-      </MainButton>
+      <Header title='Cadastrar Usuário' />
+      <WrapperRegister>
+        <ImgButton sourceImg={photo} />
+        <SpacingHeight />
+        <EditInput
+          placeholder={'Nome'}
+          value={name}
+          onChangeText={(text) => setName(text)}
+          autoCapitalize='words'
+        />
+        <EditInput
+          placeholder={'CPF'}
+          value={cpf}
+          onChangeText={(text) => setCpf(text)}
+        />
+        <SpacingHeight />
+        <EditInput
+          placeholder={'Data de Nascimento'}
+          value={birthday}
+          onChangeText={(text) => setBirthday(text)}
+        />
+        <SpacingHeight />
+        <EditInput
+          placeholder={'Login'}
+          value={login}
+          onChangeText={(text) => setLogin(text)}
+        />
+        <SpacingHeight />
+        <EditInput
+          placeholder={'Senha'}
+          value={password}
+          onChangeText={(text) => setPassword(text)}
+        />
+        <SpacingHeight />
+        <EditInput
+          placeholder={'Insira o endereço da imagem'}
+          onChangeText={(text) => setPhoto(text)}
+        />
+        <SpacingHeight />
+        <MainButton
+          onPress={() => addPost()}
+        >
+          <SpacingHeight />
+          <ButtonText>Cadastrar</ButtonText>
+        </MainButton>
+      </WrapperRegister>
       <Footer />
     </MainContainer>
   )

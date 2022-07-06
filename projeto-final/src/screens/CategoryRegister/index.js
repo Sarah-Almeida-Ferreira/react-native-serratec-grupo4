@@ -4,51 +4,51 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
-import { SpacingHeight } from './styles.js';
+import { SpacingHeight, WrapperRegister } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
 import { api } from '../../services/api.js';
 
 export const CategoryRegister = ({ navigation }) => {
-  const [nome, setNome] = useState("");
-  const [foto, setFoto] = useState("");
+  const [name, setName] = useState("");
+  const [photo, setPhoto] = useState("https://i.imgur.com/khLyPgQ.png");
 
   const addPost = () => {
     const data = {
-      nome: nome,
-      foto: foto,
+      nome: name,
+      foto: photo,
     };
 
     api.post('/categoria', data)
       .then((response) => renderOutput(response));
 
     navigation.goBack();
-    alert('Categoria salva com sucesso!')
   };
 
   return (
     <MainContainer>
       <Header title='Cadastrar Categoria' />
-      <ImgButton sourceImg={foto} />
-      <SpacingHeight></SpacingHeight>
-      <EditInput
-        placeholder={'Informe a categoria'}
-        value={nome}
-        onChangeText={(text) => setNome(text)}
-        autoCapitalize='words'
-      />
-      <EditInput
-        placeholder={'Informe a endereço da imagem'}
-        value={foto}
-        onChangeText={(text) => setFoto(text)}
-        autoCapitalize='words'
-      />
-      <SpacingHeight></SpacingHeight>
-      <MainButton
-        onPress={() => addPost()}
-      >
-        <SpacingHeight></SpacingHeight>
-        <ButtonText>Cadastrar</ButtonText>
-      </MainButton>
+      <WrapperRegister>
+        <ImgButton sourceImg={photo} />
+        <SpacingHeight />
+        <EditInput
+          placeholder={'Informe a categoria'}
+          value={name}
+          onChangeText={(text) => setName(text)}
+          autoCapitalize='words'
+        />
+        <EditInput
+          placeholder={'Informe a endereço da imagem'}
+          onChangeText={(text) => setPhoto(text)}
+          autoCapitalize='words'
+        />
+        <SpacingHeight />
+        <MainButton
+          onPress={() => addPost()}
+        >
+          <SpacingHeight />
+          <ButtonText>Cadastrar</ButtonText>
+        </MainButton>
+      </WrapperRegister>
       <Footer />
     </MainContainer>
   )

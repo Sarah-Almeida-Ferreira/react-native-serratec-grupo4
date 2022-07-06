@@ -19,7 +19,7 @@ export const WrapperInput = styled.View`
 `;
 
 export const Container = styled.View`
-  margin-bottom: 20px;
+  margin-bottom: 30px;
 `;
 
 export const NomeInput = styled.Text`
