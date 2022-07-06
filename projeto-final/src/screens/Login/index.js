@@ -11,8 +11,14 @@ export const Login = ({ navigation }) => {
         <BeeIcon source={require('../../../assets/abelha.png')} />
         <FormContainer>
           <Title>Login</Title>
-          <LoginInput placeholder={'Digite seu login'} />
-          <PasswordInput placeholder={'Digite sua senha'} />
+          <LoginInput
+            secureTextEntry
+            placeholder={'Digite seu login'}
+          />
+          <PasswordInput
+            secureTextEntry
+            placeholder={'Digite sua senha'}
+          />
           <EnterButton onPress={() => navigation.navigate('Welcome')}>
             <ButtonText>ENTRAR</ButtonText>
           </EnterButton>

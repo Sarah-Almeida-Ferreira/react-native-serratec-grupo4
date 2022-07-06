@@ -11,11 +11,12 @@ export const LoginInput = ({ placeholder }) => {
   )
 } 
 
-export const PasswordInput  = ({ placeholder }) => {
+export const PasswordInput  = ({ placeholder, secureTextEntry }) => {
   return (
     <InputContainerPassword
       placeholderTextColor={`${colors.tertiary}`}
       placeholder={placeholder}
+      secureTextEntry={secureTextEntry}
     />
   )
 }

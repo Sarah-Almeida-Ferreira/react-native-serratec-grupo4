@@ -5,7 +5,7 @@ import colors from '../../themes/colors';
 
 // import { Container } from './styles';
 
-export const EditInput = ({nome, placeholder, value, onChangeText, autoCapitalize}) => {
+export const EditInput = ({nome, placeholder, value, onChangeText, autoCapitalize, secureTextEntry}) => {
   return (
     <Container>
       <NomeInput>{nome}</NomeInput>
@@ -16,6 +16,7 @@ export const EditInput = ({nome, placeholder, value, onChangeText, autoCapitaliz
           value={value}
           onChangeText={onChangeText}
           autoCapitalize={autoCapitalize}
+          secureTextEntry={secureTextEntry}
         />
         {/* <MaterialIcons name="edit" size={24} color={colors.secondary} style={{marginLeft: 10}}/> */}
       </WrapperInput>

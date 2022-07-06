@@ -6,6 +6,8 @@ import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { SpacingHeight, WrapperRegister } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
+import { api } from '../../services/api.js';
+
 
 export const UserRegister = ({ navigation }) => {
   const [name, setName] = useState("");
@@ -38,7 +40,7 @@ export const UserRegister = ({ navigation }) => {
 
   return (
     <MainContainer>
-      <Header title='Cadastrar Usuário' goBack={goBack} iconName='arrow-back'/>
+      <Header title='Cadastrar Usuário' goBack={goBack} iconName='arrow-back' />
       <WrapperRegister>
         <ImgButton sourceImg={photo} />
         <SpacingHeight />
@@ -67,6 +69,7 @@ export const UserRegister = ({ navigation }) => {
         />
         <SpacingHeight />
         <EditInput
+          secureTextEntry
           placeholder={'Senha'}
           value={password}
           onChangeText={(text) => setPassword(text)}

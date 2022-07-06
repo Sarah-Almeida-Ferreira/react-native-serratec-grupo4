@@ -33,7 +33,4 @@ export const InputContainerPassword = styled.TextInput`
   align-items: center;
   justify-content: center;
   padding-left: 32px;
-
-  -webkit-text-security: disc;
-  text-security: disc;
 `;
