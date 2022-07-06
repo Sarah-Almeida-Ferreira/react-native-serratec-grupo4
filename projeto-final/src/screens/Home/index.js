@@ -64,8 +64,8 @@ export const Home = () => {
     return (
         <MainContainer>
             <Header title='Olá, Admin!' />
+            <LogoArrepio source={require('../../../assets/turmadoarrepio.png')}/>
             <CardsContainer>
-                <LogoArrepio source={require('../../../assets/turmadoarrepio.png')}/>
                 <FlatList
                     data={Lista}
                     renderItem={renderizedItem}

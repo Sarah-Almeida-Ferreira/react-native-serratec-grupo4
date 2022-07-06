@@ -7,10 +7,13 @@ import { MaterialIcons } from '@expo/vector-icons';
 export const ImgButton = ({sourceImg, onPressEdit}) => {
     return (
         <Container>
-            <CustomImage source={'https://i.imgur.com/khLyPgQ.png'} />
-            <CustomButton onPress={onPressEdit}>
+            <CustomImage
+                source={sourceImg}
+                resizeMode='contain'
+            />
+            {/* <CustomButton onPress={onPressEdit}>
             <MaterialIcons name="edit" size={24} color={colors.secondary} />
-            </CustomButton>
+            </CustomButton> */}
         </Container>
     )
 }

@@ -9,9 +9,7 @@ export const LogoContainer = styled.View`
     border-bottom-right-radius: 30px;
     border-bottom-left-radius: 30px;
     justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0px;
+    align-items: center;    
 `;
 
 export const Message = styled.Text`

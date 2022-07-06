@@ -6,7 +6,6 @@ export const MainContainer = styled.View`
     background-size: cover;
     background-repeat: no-repeat;
     background-color: ${colors.primary};
-    justify-content: center;
     align-items: center;
 `;
 

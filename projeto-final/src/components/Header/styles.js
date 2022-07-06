@@ -2,8 +2,7 @@ import styled from 'styled-components/native';
 import colors from '../../themes/colors'
 
 export const Container = styled.View`
-    position: absolute;
-    top: 0px;
+    align-self: flex-start;
     width: 100%;
     height:77px;
     background-color: ${colors.secondary};
@@ -11,6 +10,7 @@ export const Container = styled.View`
     border-bottom-left-radius: 5px;
     flex-direction: row;
     justify-content: flex-start;
+    margin-bottom:30px;
 `;
 
 export const WrapperText = styled.View`

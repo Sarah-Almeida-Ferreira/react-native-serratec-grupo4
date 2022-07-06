@@ -29,13 +29,10 @@ export const EnterButton = styled.TouchableOpacity`
     width: 123px;
     padding: 5px;
     margin-top: 50px;
-
-    background-color: ${colors.buttonColor};
-    
+    background-color: ${colors.buttonColor};    
     border: 3px solid ${colors.primary};
     border-radius: 20px;
     box-sizing: border-box;
-
     justify-content: center;
 `;
 
@@ -48,3 +45,9 @@ export const ButtonText = styled.Text`
   font-size: 14px;
   line-height: 20px;
 `;
+
+export const WrapperLogin = styled.View`
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+`
