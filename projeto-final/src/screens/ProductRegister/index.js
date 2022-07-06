@@ -12,10 +12,15 @@ import { ImgButton } from '../../components/ImgButton/index.js';
 
 
 export const ProductRegister = ({ navigation }) => {
+
+  function goBack() {
+    navigation.goBack();
+  }
+  
   return (
     <MainContainer>
 
-     <Header title='Cadastrar Produto' />
+     <Header title='Cadastrar Produto' goBack={goBack} iconName='arrow-back'/>
      <SpacingHeight></SpacingHeight>
       <ImgButton></ImgButton>
       <EditInput placeholder={'Nome'} />

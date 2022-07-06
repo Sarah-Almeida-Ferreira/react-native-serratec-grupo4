@@ -21,6 +21,7 @@
     "heroku": "^7.60.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hook-form": "^7.33.1",
     "react-icons": "^4.4.0",
     "react-native": "0.68.2",
     "react-native-gesture-handler": "~2.2.1",

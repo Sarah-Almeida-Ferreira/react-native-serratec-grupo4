@@ -48,3 +48,9 @@ export const ButtonText = styled.Text`
   font-size: 14px;
   line-height: 20px;
 `;
+
+export const Container = styled.View`
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+`;

@@ -9,27 +9,25 @@ export const Container = styled.View`
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-bottom:30px;
+    align-items: center;
+    padding: 0px 10px 0px 10px;
 `;
 
 export const WrapperText = styled.View`
-    align-items: center;
-    margin-top: 30px;
+    margin-left: 20px;
 `;
 
 export const Title = styled.Text`
     color: ${colors.primary};
     font-family: 'sans-serif';
-    font-style: normal;
-    font-weight: 700;
+    font-weight: bold;
     font-size: 24px;
+    text-align: center;
 `;
 
 export const Logo = styled.Image`
     width: 100px;
     height: 50px;
-    left: 5px;
-    top: 12px;
-    margin-right: 10px;
 `;

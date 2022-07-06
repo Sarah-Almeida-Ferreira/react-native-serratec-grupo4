@@ -24,9 +24,13 @@ export const CategoryRegister = ({ navigation }) => {
       });
   };
 
+  function goBack() {
+    navigation.goBack();
+  }
+  
   return (
     <MainContainer>
-      <Header title='Cadastrar Categoria' />
+      <Header title='Cadastrar Categoria' goBack={goBack} iconName='arrow-back'/>
       <WrapperRegister>
         <ImgButton sourceImg={photo} />
         <SpacingHeight />

@@ -7,9 +7,14 @@ import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
 
 export const EditProduct = ({navigation}) => {
+
+  function goBack() {
+    navigation.goBack();
+  }
+  
   return (
     <MainContainer>
-      <Header title='Editar Produto' />
+      <Header title='Editar Produto' goBack={goBack} iconName='arrow-back'/>
       <ImgButton sourceImg={require('../../../assets/produto.png')} />
       <EditInput nome='Nome:' placeholder='Nome do Produto' />
       <EditInput nome='Descrição:' placeholder='Descrição do Produto' />

@@ -32,9 +32,13 @@ export const UserRegister = ({ navigation }) => {
       });
   };
 
+  function goBack() {
+    navigation.goBack();
+  }
+
   return (
     <MainContainer>
-      <Header title='Cadastrar Usuário' />
+      <Header title='Cadastrar Usuário' goBack={goBack} iconName='arrow-back'/>
       <WrapperRegister>
         <ImgButton sourceImg={photo} />
         <SpacingHeight />

@@ -7,9 +7,14 @@ import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
 
 export const EditUser = ({navigation}) => {
+
+  function goBack() {
+    navigation.goBack();
+  }
+  
   return (
     <MainContainer>
-      <Header title='Editar Usuário' />
+      <Header title='Editar Usuário' goBack={goBack} iconName='arrow-back'/>
       <ImgButton sourceImg={require('../../../assets/abelha2.png')}/>
       <EditInput nome='Nome:' placeholder='Nome do Usuário' />
       <EditInput nome='CPF:' placeholder='999.999.999-99' />
