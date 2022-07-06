@@ -17,10 +17,12 @@ export const Products = ({ navigation }) => {
 
   const renderItem = ({ item }) => (
     <ItemCellProduct
+    foto={item.foto}
     nome={item.nome} 
-
-    foto={item.foto} 
+    descricao={item.descricao}
     onPressEdit={() => navigation.navigate('EditProduct')} />
+
+
   );
 
   useEffect(() => {
@@ -30,8 +32,8 @@ export const Products = ({ navigation }) => {
   return (
     <MainContainer>
       <Header title='Produtos' />
-      <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
       <WrapperProducts>
+        <PlusButton onPress={() => navigation.navigate('ProductRegister')} />
         <FlatList
           data={product}
           keyExtractor={(item) => item.id}
