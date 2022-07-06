@@ -27,9 +27,9 @@ export const UserRegister = ({ navigation }) => {
     };
 
     api.post('/usuario', data)
-      .then((response) => renderOutput(response));
-
-    navigation.goBack();
+      .then((res) => {
+        navigation.goBack();
+      });
   };
 
   return (
@@ -73,10 +73,7 @@ export const UserRegister = ({ navigation }) => {
           onChangeText={(text) => setPhoto(text)}
         />
         <SpacingHeight />
-        <MainButton
-          onPress={() => addPost()}
-        >
-          <SpacingHeight />
+        <MainButton onPress={() => addPost()}>
           <ButtonText>Cadastrar</ButtonText>
         </MainButton>
       </WrapperRegister>

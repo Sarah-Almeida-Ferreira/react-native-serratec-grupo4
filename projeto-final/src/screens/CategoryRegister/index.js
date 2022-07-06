@@ -19,9 +19,9 @@ export const CategoryRegister = ({ navigation }) => {
     };
 
     api.post('/categoria', data)
-      .then((response) => renderOutput(response));
-
-    navigation.goBack();
+      .then((res) => {
+        navigation.goBack();
+      });
   };
 
   return (
