@@ -2,8 +2,12 @@ import React from 'react';
 import { MainContainer } from '../../components/MainContainer/styles';
 import { FormContainer, Title, BeeIcon, EnterButton, ButtonText, WrapperLogin } from './styles';
 import { LoginInput, PasswordInput } from "../../components/LoginInput";
+import { api } from '../../services/api.js';
 
 export const Login = ({ navigation }) => {
+
+
+
 
   return (
     <MainContainer style={{}}>
