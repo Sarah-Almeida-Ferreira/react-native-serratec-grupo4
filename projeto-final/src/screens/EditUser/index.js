@@ -1,12 +1,24 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
+import { api } from '../../services/api.js';
+import { IdContext } from '../../context/index.js';
 
-export const EditUser = ({navigation}) => {
+export const EditUser = ({navigation, code}) => {
+  const [ user, setUser ] = useState({});
+  const { id, setId } = useContext(IdContext);
+
+  const getUser = async () => {
+    const { data } = await api.get(`/usuario/${id}`);
+    setUser(data);
+    console.log(code);
+    console.log(id);
+    alert(data.nome);
+  }
 
   function goBack() {
     navigation.goBack();
@@ -22,6 +34,9 @@ export const EditUser = ({navigation}) => {
       <EditInput nome='Email:' placeholder='Usuario@email.com' />
       <EditInput nome='Senha:' placeholder='*************' />
       <MainButton style={{marginTop: 60}} onPress={() => navigation.navigate('Users')}>
+        <ButtonText>Salvar</ButtonText>  
+      </MainButton>
+      <MainButton style={{marginTop: 60}} onPress={() => getUser()}>
         <ButtonText>Salvar</ButtonText>  
       </MainButton>
       <Footer />

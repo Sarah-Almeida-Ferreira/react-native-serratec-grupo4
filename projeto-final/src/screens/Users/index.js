@@ -15,7 +15,11 @@ export const Users = ({navigation}) => {
   }
 
   const renderItem = ({item}) => (
-    <ItemCell name={item.nome} code={item.id} onPressEdit={() => navigation.navigate('EditUser')} />
+      <ItemCell
+        name={item.nome}
+        code={item.id}
+        onPressEdit={() => navigation.navigate('EditUser')}
+      />
   );
 
   useEffect(() => {
