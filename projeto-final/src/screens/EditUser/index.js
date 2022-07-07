@@ -1,10 +1,13 @@
-import React, { useState, useContext, useEffect } from 'react';
+//Components
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
+
+//Others
+import React, { useState, useContext, useEffect } from 'react';
 import { api } from '../../services/api.js';
 import { IdContext } from '../../context/index.js';
 
@@ -58,11 +61,11 @@ export const EditUser = ({navigation}) => {
     <MainContainer>
       <Header title='Editar Usuário' goBack={goBack} iconName='arrow-back'/>
       <ImgButton sourceImg={photo}/>
-      <EditInput nome='Nome:' value={name} onChangeText={(text) => setName(text)}/>
-      <EditInput nome='CPF:' value={cpf} onChangeText={(text) => setCpf(text)}/>
-      <EditInput nome='Data de Nascimento:' value={birthday} onChangeText={(text) => setBirthday(text)}/>
-      <EditInput nome='Login:' value={login} onChangeText={(text) => setLogin(text)}/>
-      <EditInput nome='Senha:' value={password} onChangeText={(text) => setPassword(text)}/>
+      <EditInput nome='Nome:' value={name} onChangeText={(text) => setName(text)} />
+      <EditInput nome='CPF:' value={cpf} onChangeText={(text) => setCpf(text)} />
+      <EditInput nome='Data de Nascimento:' value={birthday} onChangeText={(text) => setBirthday(text)} />
+      <EditInput nome='Login:' value={login} onChangeText={(text) => setLogin(text)} />
+      <EditInput nome='Senha:' value={password} onChangeText={(text) => setPassword(text)} />
       <MainButton style={{marginTop: 60}} onPress={() => save()}>
         <ButtonText>Salvar</ButtonText>  
       </MainButton>

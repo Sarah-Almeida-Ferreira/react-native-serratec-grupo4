@@ -34,8 +34,8 @@ export const ItemCellCategory = ({ name, id, photo }) => {
                 <Name>{name}</Name>
                 <Description>Cód: {id}</Description>
             </TextContainer>
-            <ButtonsContainer onPress={() => editItem(id)}>
-                <CustomButton>
+            <ButtonsContainer>
+                <CustomButton onPress={() => editItem(id)}>
                     <MaterialIcons name="edit" size={24} color={colors.primary} />
                 </CustomButton>
                 <CustomButton onPress={() => deleteItem(id)}>
