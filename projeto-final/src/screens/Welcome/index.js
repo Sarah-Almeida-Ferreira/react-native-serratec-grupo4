@@ -9,7 +9,7 @@ export const Welcome = ({ navigation }) => {
   useEffect(() => {
     setTimeout(() => {
       navigation.navigate('Home')
-    }, 500)
+    }, 3000)
   }, [])
 
   return (
