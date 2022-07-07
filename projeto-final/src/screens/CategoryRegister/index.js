@@ -20,6 +20,7 @@ export const CategoryRegister = ({ navigation }) => {
 
     api.post('/categoria', data)
       .then((res) => {
+        alert('Item cadastrado com sucesso!')
         navigation.goBack();
       });
   };

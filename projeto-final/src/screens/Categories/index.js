@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+//Components 
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { PlusButton } from '../../components/PlusButton/index.js';
-import { api } from '../../services/api.js';
-import { FlatList } from 'react-native';
 
-import { Container, CustomButton, Code, Name, WrapperUser, Foto } from "./styles"
+//Styles
+import { CustomButton, Name, Photo, Card, TextContainer, ButtonsContainer, Description } from "./styles"
 import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
 import colors from "../../themes/colors";
+
+//Others
+import React, { useEffect, useState } from 'react';
 import { useNavigation } from "@react-navigation/native";
+import { api } from '../../services/api.js';
+import { FlatList } from 'react-native';
 
 export const Categories = () => {
   const [category, setCategory] = useState([]);
@@ -24,34 +28,33 @@ export const Categories = () => {
   }, []);
 
   const renderItem = ({ item }) => (
-    <ItemCell name={item.nome} image={item.foto} id={item.id} />
+    <ItemCellCategory name={item.nome} photo={item.foto} id={item.id} />
   );
 
-  const ItemCell = ({ id, name, image, code }) => {
-
-    function openCategoryDelete() {
-      deleteCategory(id);
-      navigation.navigate('Categories');
-    }
-
-    const deleteCategory = async (id) => {
-      return api.delete(`/categoria/${id}`).then((response) => response.data);
+  const ItemCellCategory = ({ name, id, photo }) => {
+    const getCategoryToDelete = async (id) => {
+      return api.delete(`/categoria/${id}`).then((res) => {
+        alert('Item excluído com sucesso!')
+        navigation.navigate('Categories');
+      });
     };
 
     return (
-      <Container>
-        <WrapperUser>
+      <Card>
+        <Photo source={{ uri: photo }} />
+        <TextContainer>
           <Name>{name}</Name>
-          <Code>Cód: {id}</Code>
-          <Foto source={image}></Foto>
-        </WrapperUser>
-        <CustomButton onPress={() => teste()}>
-          <MaterialIcons name="edit" size={24} color={colors.secondary} />
-        </CustomButton>
-        <CustomButton onPress={openCategoryDelete}>
-          <FontAwesome5 name="trash" size={24} color={colors.secondary} />
-        </CustomButton>
-      </Container>
+          <Description>Cód: {id}</Description>
+        </TextContainer>
+        <ButtonsContainer>
+          <CustomButton>
+            <MaterialIcons name="edit" size={24} color={colors.primary} />
+          </CustomButton>
+          <CustomButton onPress={() => getCategoryToDelete(id)}>
+            <FontAwesome5 name="trash" size={20} color={colors.primary} />
+          </CustomButton>
+        </ButtonsContainer>
+      </Card>
     )
   };
 
