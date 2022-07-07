@@ -7,14 +7,13 @@ import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { SpacingHeight } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
 import { api } from '../../services/api.js';
-import spacing from '../../themes/spacing.js';
 
 export const ProductRegister = ({ navigation }) => {
   const [name, setName] = useState('');
   const [photo, setPhoto] = useState('');
   const [description, setDescription] = useState('');
-  const [stock, setStock] = useState(0);
-  const [price, setPrice] = useState(0);
+  const [stock, setStock] = useState('');
+  const [price, setPrice] = useState('');
 
   const addPost = () => {
     const data = {
@@ -40,7 +39,7 @@ export const ProductRegister = ({ navigation }) => {
     <MainContainer>
 
       <Header title='Cadastrar Produto' goBack={goBack} iconName='arrow-back' />
-      <ImgButton></ImgButton>
+      <ImgButton />
       <EditInput
         placeholder={'Informe o nome do produto'}
         value={name}

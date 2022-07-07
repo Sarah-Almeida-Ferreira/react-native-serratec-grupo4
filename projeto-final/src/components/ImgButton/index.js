@@ -8,8 +8,8 @@ export const ImgButton = ({sourceImg, onPressEdit}) => {
     return (
         <Container>
             <CustomImage
-                source={sourceImg}
-                resizeMode='contain'
+                source={'https://i.imgur.com/khLyPgQ.png'}
+                // resizeMode='contain'
             />
             {/* <CustomButton onPress={onPressEdit}>
             <MaterialIcons name="edit" size={24} color={colors.secondary} />
