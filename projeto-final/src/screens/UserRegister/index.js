@@ -43,7 +43,6 @@ export const UserRegister = ({ navigation }) => {
       <Header title='Cadastrar Usuário' goBack={goBack} iconName='arrow-back' />
       <WrapperRegister>
         <ImgButton sourceImg={photo} />
-        <SpacingHeight />
         <EditInput
           placeholder={'Nome'}
           value={name}
@@ -55,31 +54,26 @@ export const UserRegister = ({ navigation }) => {
           value={cpf}
           onChangeText={(text) => setCpf(text)}
         />
-        <SpacingHeight />
         <EditInput
           placeholder={'Data de Nascimento'}
           value={birthday}
           onChangeText={(text) => setBirthday(text)}
         />
-        <SpacingHeight />
         <EditInput
           placeholder={'Login'}
           value={login}
           onChangeText={(text) => setLogin(text)}
         />
-        <SpacingHeight />
         <EditInput
           secureTextEntry
           placeholder={'Senha'}
           value={password}
           onChangeText={(text) => setPassword(text)}
         />
-        <SpacingHeight />
         <EditInput
           placeholder={'Insira o endereço da imagem'}
           onChangeText={(text) => setPhoto(text)}
         />
-        <SpacingHeight />
         <MainButton onPress={() => addPost()}>
           <ButtonText>Cadastrar</ButtonText>
         </MainButton>
