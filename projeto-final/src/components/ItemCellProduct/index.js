@@ -23,7 +23,7 @@ export const ItemCellProduct = ({ name, description, photo, id }) => {
         api.delete(`/produto/${id}`)
             .then((res) => {
                 alert('Item excluído com sucesso!');
-                navigation.navigate('Categories');
+                navigation.navigate('Products');
             });
     };
 
