@@ -8,46 +8,46 @@ import { api } from "../../services/api";
 
 export const UserCard = ({ name, cpf, photo, birthday, code }) => {
 
-    const {setId} = useContext(IdContext);
+    const { setId } = useContext(IdContext);
     const navigation = useNavigation();
 
     function editUser() {
         const userId = code;
         setId(userId);
         navigation.navigate('EditUser');
-    }
+    };
 
     function deleteUser() {
         api.delete(`/usuario/${code}`)
             .then(() => navigation.navigate('Users'));
-    }
+    };
 
     return (
-            <Card>
-                <Foto source={{ uri: photo }} />
-                <TextContainer>
-                    <Name>{name}</Name>
-                    <Description>Código: {code}</Description>
-                    <Description>CPF: {cpf}</Description>
-                    <Description>Data de Nascimento: {birthday}</Description>
-                </TextContainer>
-                <ButtonsContainer>
-                    <CustomButton onPress={editUser}>
-                        <MaterialIcons
-                            name="edit"
-                            size={24}
-                            color={colors.primary} />
-                    </CustomButton>
-                    <CustomButton
-                        onPress={deleteUser}
-                    >
-                        <FontAwesome5
-                            name="trash"
-                            size={20}
-                            color={colors.primary}
-                        />
-                    </CustomButton>
-                </ButtonsContainer>
-            </Card>
+        <Card>
+            <Foto source={{ uri: photo }} />
+            <TextContainer>
+                <Name>{name}</Name>
+                <Description>Código: {code}</Description>
+                <Description>CPF: {cpf}</Description>
+                <Description>Data de Nascimento: {birthday}</Description>
+            </TextContainer>
+            <ButtonsContainer>
+                <CustomButton onPress={editUser}>
+                    <MaterialIcons
+                        name="edit"
+                        size={24}
+                        color={colors.primary} />
+                </CustomButton>
+                <CustomButton
+                    onPress={deleteUser}
+                >
+                    <FontAwesome5
+                        name="trash"
+                        size={20}
+                        color={colors.primary}
+                    />
+                </CustomButton>
+            </ButtonsContainer>
+        </Card>
     )
-}
+};

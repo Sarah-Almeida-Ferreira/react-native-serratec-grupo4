@@ -2,11 +2,7 @@
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { PlusButton } from '../../components/PlusButton/index.js';
-
-//Styles
-import { CustomButton, Name, Photo, Card, TextContainer, ButtonsContainer, Description } from "./styles"
-import { FontAwesome5, MaterialIcons } from '@expo/vector-icons';
-import colors from "../../themes/colors";
+import { ItemCellCategory } from '../../components/ItemCellCategory/index.js';
 
 //Others
 import React, { useEffect, useState } from 'react';
@@ -22,6 +18,10 @@ export const Categories = () => {
     const { data } = await api.get('/categoria');
     setCategory(data);
   }
+  
+  function goBack() {
+    navigation.goBack();
+  }
 
   useEffect(() => {
     getCategories();
@@ -30,37 +30,6 @@ export const Categories = () => {
   const renderItem = ({ item }) => (
     <ItemCellCategory name={item.nome} photo={item.foto} id={item.id} />
   );
-
-  const ItemCellCategory = ({ name, id, photo }) => {
-    const getCategoryToDelete = async (id) => {
-      return api.delete(`/categoria/${id}`).then((res) => {
-        alert('Item excluído com sucesso!')
-        navigation.navigate('Categories');
-      });
-    };
-
-    return (
-      <Card>
-        <Photo source={{ uri: photo }} />
-        <TextContainer>
-          <Name>{name}</Name>
-          <Description>Cód: {id}</Description>
-        </TextContainer>
-        <ButtonsContainer>
-          <CustomButton>
-            <MaterialIcons name="edit" size={24} color={colors.primary} />
-          </CustomButton>
-          <CustomButton onPress={() => getCategoryToDelete(id)}>
-            <FontAwesome5 name="trash" size={20} color={colors.primary} />
-          </CustomButton>
-        </ButtonsContainer>
-      </Card>
-    )
-  };
-
-  function goBack() {
-    navigation.goBack();
-  }
 
   return (
     <MainContainer>

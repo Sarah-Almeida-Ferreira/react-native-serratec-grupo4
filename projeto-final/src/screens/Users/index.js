@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+//Components
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { UserCard } from '../../components/UserCard/index.js';
 import { PlusButton } from '../../components/PlusButton/index.js';
+
+//Others
+import React, { useEffect, useState } from 'react';
 import { api } from '../../services/api.js';
 import { FlatList } from 'react-native';
 
@@ -14,6 +17,14 @@ export const Users = ({navigation}) => {
     setUser(data);
   }
 
+  function goBack() {
+    navigation.goBack();
+  }
+
+  useEffect(() => {
+    getUsers();
+  }, []);
+
   const renderItem = ({item}) => (
       <UserCard
         name={item.nome}
@@ -23,14 +34,6 @@ export const Users = ({navigation}) => {
         birthday={item.dtNascimento}
       />
   );
-
-  useEffect(() => {
-    getUsers();
-  }, []);
-
-  function goBack() {
-    navigation.goBack();
-  }
   
   return (
     <MainContainer>
