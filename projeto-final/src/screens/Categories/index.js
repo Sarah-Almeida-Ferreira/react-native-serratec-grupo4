@@ -21,7 +21,7 @@ export const Categories = () => {
 
   useEffect(() => {
     getCategories();
-  }, [category]);
+  }, []);
 
   const renderItem = ({ item }) => (
     <ItemCell name={item.nome} image={item.foto} id={item.id} />

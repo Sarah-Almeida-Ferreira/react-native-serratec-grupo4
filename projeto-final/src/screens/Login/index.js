@@ -11,11 +11,11 @@ export const Login = ({ navigation }) => {
   const getUsers = async () => {
      await api.get(`/usuario/login?login=${login}&senha=${password}
     `).then((response) => {
-      if (response.data === 'Login confirmado!') {
-        navigation.navigate('Welcome');
+      if (response.data === 'Login e/ou senha inválidos.') {
+        alert(response.data);
       }
       else {
-        alert('Login e/ou senha inválidos.');
+        navigation.navigate('Welcome');
       }
     });
   }

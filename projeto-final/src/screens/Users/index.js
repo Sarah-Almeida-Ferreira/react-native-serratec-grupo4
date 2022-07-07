@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
-import { ItemCell } from '../../components/ItemCell/index.js';
+import { UserCard } from '../../components/UserCard/index.js';
 import { PlusButton } from '../../components/PlusButton/index.js';
 import { api } from '../../services/api.js';
 import { FlatList } from 'react-native';
@@ -15,10 +15,12 @@ export const Users = ({navigation}) => {
   }
 
   const renderItem = ({item}) => (
-      <ItemCell
+      <UserCard
         name={item.nome}
         code={item.id}
-        onPressEdit={() => navigation.navigate('EditUser')}
+        photo={item.foto}
+        cpf={item.cpf}
+        birthday={item.dtNascimento}
       />
   );
 
