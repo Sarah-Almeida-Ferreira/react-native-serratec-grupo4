@@ -13,9 +13,9 @@ export const ItemCellCategory = ({ name, id, photo }) => {
     const { setId } = useContext(IdContext);
     const navigation = useNavigation();
 
-    function editUser(id) {
-        const userId = id;
-        setId(userId);
+    function editItem(id) {
+        const itemId = id;
+        setId(itemId);
         navigation.navigate('EditCategory');
     };
 
@@ -34,7 +34,7 @@ export const ItemCellCategory = ({ name, id, photo }) => {
                 <Name>{name}</Name>
                 <Description>Cód: {id}</Description>
             </TextContainer>
-            <ButtonsContainer>
+            <ButtonsContainer onPress={() => editItem(id)}>
                 <CustomButton>
                     <MaterialIcons name="edit" size={24} color={colors.primary} />
                 </CustomButton>

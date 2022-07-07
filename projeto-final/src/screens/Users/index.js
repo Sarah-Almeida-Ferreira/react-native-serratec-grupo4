@@ -23,7 +23,7 @@ export const Users = ({navigation}) => {
 
   useEffect(() => {
     getUsers();
-  }, []);
+  }, [user]);
 
   const renderItem = ({item}) => (
       <UserCard

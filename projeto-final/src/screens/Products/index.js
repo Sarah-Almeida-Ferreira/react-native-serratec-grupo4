@@ -16,17 +16,15 @@ export const Products = ({ navigation }) => {
 
   const renderItem = ({ item }) => (
     <ItemCellProduct
-    foto={item.foto}
-    nome={item.nome} 
-    descricao={item.descricao}
-    onPressEdit={() => navigation.navigate('EditProduct')} />
-
-
+    photo={item.foto}
+    name={item.nome} 
+    description={item.descricao}
+    />
   );
 
   useEffect(() => {
     getProducts();
-  }, []);
+  }, [product]);
 
   function goBack() {
     navigation.goBack();

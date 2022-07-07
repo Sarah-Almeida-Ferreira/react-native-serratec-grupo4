@@ -17,15 +17,15 @@ export const Categories = () => {
   const getCategories = async () => {
     const { data } = await api.get('/categoria');
     setCategory(data);
-  }
+  };
   
   function goBack() {
     navigation.goBack();
-  }
+  };
 
   useEffect(() => {
     getCategories();
-  }, []);
+  }, [category]);
 
   const renderItem = ({ item }) => (
     <ItemCellCategory name={item.nome} photo={item.foto} id={item.id} />
