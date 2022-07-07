@@ -27,7 +27,7 @@ export const EditUser = ({navigation}) => {
     setCpf(data.cpf);
     setPassword(data.senha);
     setLogin(data.login)
-  }
+  };
 
   useEffect(() => {
     getUser();
@@ -36,7 +36,7 @@ export const EditUser = ({navigation}) => {
 
   function goBack() {
     navigation.goBack();
-  }
+  };
 
   function save() {
     api.put(`/usuario/${id}
@@ -48,22 +48,25 @@ export const EditUser = ({navigation}) => {
       login: login,
       nome: name,
       senha: password
-     }).then(() => navigation.navigate('Users'));
-   }
+     }).then((res) => {
+        alert('Item editado com sucesso!')
+        navigation.goBack();
+     });
+   };
   
   return (
     <MainContainer>
       <Header title='Editar Usuário' goBack={goBack} iconName='arrow-back'/>
       <ImgButton sourceImg={photo}/>
-      <EditInput nome='Nome:' placeholder={name} onChangeText={(text) => setName(text)}/>
-      <EditInput nome='CPF:' placeholder={cpf} onChangeText={(text) => setCpf(text)}/>
-      <EditInput nome='Data de Nascimento:' placeholder={birthday} onChangeText={(text) => setBirthday(text)}/>
-      <EditInput nome='Login:' placeholder={login} onChangeText={(text) => setLogin(text)}/>
-      <EditInput nome='Senha:' placeholder={password} onChangeText={(text) => setPassword(text)}/>
-      <MainButton style={{marginTop: 60}} onPress={save}>
+      <EditInput nome='Nome:' value={name} onChangeText={(text) => setName(text)}/>
+      <EditInput nome='CPF:' value={cpf} onChangeText={(text) => setCpf(text)}/>
+      <EditInput nome='Data de Nascimento:' value={birthday} onChangeText={(text) => setBirthday(text)}/>
+      <EditInput nome='Login:' value={login} onChangeText={(text) => setLogin(text)}/>
+      <EditInput nome='Senha:' value={password} onChangeText={(text) => setPassword(text)}/>
+      <MainButton style={{marginTop: 60}} onPress={() => save()}>
         <ButtonText>Salvar</ButtonText>  
       </MainButton>
       <Footer />
     </MainContainer>
   )
-}
+};

@@ -19,7 +19,10 @@ export const UserCard = ({ name, cpf, photo, birthday, code }) => {
 
     function deleteUser() {
         api.delete(`/usuario/${code}`)
-            .then(() => navigation.navigate('Users'));
+            .then((res) => {
+                alert('Item excluído com sucesso!');
+                navigation.navigate('Users');
+            });
     };
 
     return (
