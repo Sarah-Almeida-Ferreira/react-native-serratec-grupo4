@@ -36,19 +36,10 @@ export const ItemCellProduct = ({ name, description, photo, id }) => {
             </TextContainer>
             <ButtonsContainer>
                 <CustomButton onPress={() => editItem(id)}>
-                    <MaterialIcons
-                        name="edit"
-                        size={24}
-                        color={colors.primary} />
+                    <MaterialIcons name="edit" size={24} color={colors.primary} />
                 </CustomButton>
-                <CustomButton
-                    onPress={() => deleteItem(id)}
-                >
-                    <FontAwesome5
-                        name="trash"
-                        size={20}
-                        color={colors.primary}
-                    />
+                <CustomButton onPress={() => deleteItem(id)}>
+                    <FontAwesome5 name="trash" size={20} color={colors.primary} />
                 </CustomButton>
             </ButtonsContainer>
         </Card>
