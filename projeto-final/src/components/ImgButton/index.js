@@ -8,7 +8,7 @@ export const ImgButton = ({sourceImg, onPressEdit}) => {
     return (
         <Container>
             <CustomImage
-                source={'https://i.imgur.com/khLyPgQ.png'}
+                source={sourceImg}
                 // resizeMode='contain'
             />
             {/* <CustomButton onPress={onPressEdit}>
@@ -16,4 +16,4 @@ export const ImgButton = ({sourceImg, onPressEdit}) => {
             </CustomButton> */}
         </Container>
     )
-}
+};
