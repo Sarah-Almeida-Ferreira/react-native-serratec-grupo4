@@ -9,10 +9,10 @@ export const Login = ({ navigation }) => {
   const [password, setPassword] = useState('');
 
   const getUsers = async () => {
-    const result = await api.get(`/usuario/login?login=${login}&senha=${password}
+     await api.get(`/usuario/login?login=${login}&senha=${password}
     `).then((response) => {
       if (response.data === 'Login confirmado!') {
-        navigation.navigate('Welcome')
+        navigation.navigate('Welcome');
       }
       else {
         alert('Login e/ou senha inválidos.');
