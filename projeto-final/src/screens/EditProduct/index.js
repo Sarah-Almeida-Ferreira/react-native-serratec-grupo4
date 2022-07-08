@@ -28,7 +28,7 @@ export const EditProduct = ({navigation}) => {
     setDescription(data.descricao);
     setQuantity(data.qtdEstoque);
     setValue(data.preco);
-    setCategory(data.categoriaId)
+    setCategory(data.categoria.id)
     setPhoto(data.foto);
   };
 
