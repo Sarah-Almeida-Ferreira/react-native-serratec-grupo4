@@ -28,32 +28,25 @@ export const CategoryRegister = ({ navigation }) => {
   function goBack() {
     navigation.goBack();
   }
-  
+
   return (
     <MainContainer>
-      <Header title='Cadastrar Categoria' goBack={goBack} iconName='arrow-back'/>
-      <WrapperRegister>
-        <ImgButton sourceImg={photo} />
-        <SpacingHeight />
-        <EditInput
-          placeholder={'Informe a categoria'}
-          value={name}
-          onChangeText={(text) => setName(text)}
-          autoCapitalize='words'
-        />
-        <EditInput
-          placeholder={'Informe a endereço da imagem'}
-          onChangeText={(text) => setPhoto(text)}
-          autoCapitalize='words'
-        />
-        <SpacingHeight />
-        <MainButton
-          onPress={() => addPost()}
-        >
-          <SpacingHeight />
-          <ButtonText>Cadastrar</ButtonText>
-        </MainButton>
-      </WrapperRegister>
+      <Header title='Cadastrar Categoria' goBack={goBack} iconName='arrow-back' />
+      <ImgButton sourceImg={photo} />
+      <EditInput
+        placeholder={'Informe a categoria'}
+        value={name}
+        onChangeText={(text) => setName(text)}
+        autoCapitalize='words'
+      />
+      <EditInput
+        placeholder={'Informe a endereço da imagem'}
+        onChangeText={(text) => setPhoto(text)}
+        autoCapitalize='words'
+      />
+      <MainButton onPress={() => addPost()}>
+        <ButtonText>Cadastrar</ButtonText>
+      </MainButton>
       <Footer />
     </MainContainer>
   )
