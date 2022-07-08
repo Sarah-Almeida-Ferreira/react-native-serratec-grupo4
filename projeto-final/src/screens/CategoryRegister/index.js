@@ -4,7 +4,6 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
-import { SpacingHeight, WrapperRegister } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
 import { api } from '../../services/api.js';
 

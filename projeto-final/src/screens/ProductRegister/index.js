@@ -4,24 +4,25 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
-import { SpacingHeight } from './styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
 import { api } from '../../services/api.js';
 
 export const ProductRegister = ({ navigation }) => {
   const [name, setName] = useState('');
-  const [photo, setPhoto] = useState('');
+  const [photo, setPhoto] = useState('https://i.imgur.com/khLyPgQ.png');
   const [description, setDescription] = useState('');
   const [stock, setStock] = useState('');
   const [price, setPrice] = useState('');
+  const [category, setCategory] = useState('');
 
   const addPost = () => {
     const data = {
       nome: name,
       foto: photo,
       descricao: description,
-      estoque: stock,
+      qtdEstoque: stock,
       preco: price,
+      categoriaId: category,
     };
 
     api.post('/produto', data)
@@ -39,43 +40,40 @@ export const ProductRegister = ({ navigation }) => {
     <MainContainer>
 
       <Header title='Cadastrar Produto' goBack={goBack} iconName='arrow-back' />
-      <ImgButton />
+      <ImgButton sourceImg={photo} />
       <EditInput
         placeholder={'Informe o nome do produto'}
-        value={name}
         onChangeText={(text) => setName(text)}
         autoCapitalize='words' />
-      
-      <EditInput
-        placeholder={'Informe o endereço da imagem do produto'}
-        value={photo}
-        onChangeText={(text) => setPhoto(text)}
-        autoCapitalize='words' />
-    
       <EditInput
         placeholder={'Informe a descrição do produto'}
-        value={description}
         onChangeText={(text) => setDescription(text)}
-        autoCapitalize='words' />
- 
+        autoCapitalize='words'
+      />
       <EditInput
         placeholder={'Informe o estoque'}
-        value={stock}
         onChangeText={(text) => setStock(text)}
-        autoCapitalize='words' />
- 
+        autoCapitalize='words'
+      />
       <EditInput
         placeholder={'Informe o valor do produto'}
-        value={price}
         onChangeText={(text) => setPrice(text)}
         autoCapitalize='words'
       />
-      <MainButton
-        onPress={() => addPost()}
-      >
+      <EditInput
+        placeholder={'Informe o número da categoria do produto'}
+        onChangeText={(text) => setCategory(text)}
+        autoCapitalize='words'
+      />
+      <EditInput
+        placeholder={'Informe o endereço da imagem do produto'}
+        onChangeText={(text) => setPhoto(text)}
+        autoCapitalize='words'
+      />
+      <MainButton onPress={() => addPost()}>
         <ButtonText>Cadastrar</ButtonText>
       </MainButton>
       <Footer />
     </MainContainer>
   )
-}
+};
