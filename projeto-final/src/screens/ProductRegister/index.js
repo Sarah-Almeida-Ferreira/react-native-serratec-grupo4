@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+//Components
 import { MainContainer } from '../../components/MainContainer/styles.js';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { EditInput } from '../../components/EditInput';
 import { MainButton, ButtonText } from '../../components/MainButton/styles.js';
 import { ImgButton } from '../../components/ImgButton/index.js';
+
+//Others
+import React, { useState } from 'react';
 import { api } from '../../services/api.js';
 
 export const ProductRegister = ({ navigation }) => {
@@ -48,27 +51,22 @@ export const ProductRegister = ({ navigation }) => {
       <EditInput
         placeholder={'Informe a descrição do produto'}
         onChangeText={(text) => setDescription(text)}
-        autoCapitalize='words'
       />
       <EditInput
         placeholder={'Informe o estoque'}
         onChangeText={(text) => setStock(text)}
-        autoCapitalize='words'
       />
       <EditInput
         placeholder={'Informe o valor do produto'}
         onChangeText={(text) => setPrice(text)}
-        autoCapitalize='words'
       />
       <EditInput
         placeholder={'Informe o número da categoria do produto'}
         onChangeText={(text) => setCategory(text)}
-        autoCapitalize='words'
       />
       <EditInput
         placeholder={'Informe o endereço da imagem do produto'}
         onChangeText={(text) => setPhoto(text)}
-        autoCapitalize='words'
       />
       <MainButton onPress={() => addPost()}>
         <ButtonText>Cadastrar</ButtonText>
